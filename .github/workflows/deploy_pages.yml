@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [ main ]
-  workflow_dispatch:
+    workflow_dispatch: # Removed to keep a minimal workflow
 
 # Use minimal required permissions for the Pages workflow
 permissions:
@@ -22,15 +22,6 @@ jobs:
           fetch-depth: 0
 
       - name: Diagnostics (git / env / files)
-        run: |
-          echo "=== pwd ==="; pwd
-          echo "=== ls -la ==="; ls -la
-          echo "=== git --version ==="; git --version
-          echo "=== git status ==="; git status --porcelain || true
-          echo "=== git remote -v ==="; git remote -v || true
-          echo "=== git branch -a ==="; git branch -a || true
-          echo "=== env (select) ==="; env | grep -E 'GITHUB|RUNNER|INPUT|TOKEN' || true
-
       - name: Configure Pages
         uses: actions/configure-pages@v3
 
