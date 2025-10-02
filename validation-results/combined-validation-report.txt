@@ -1,0 +1,61 @@
+Validation Report - Plataforma ONG
+Generated: 2025-10-01
+
+Summary:
+All validated HTML files returned 0 messages (no errors or warnings) from the W3C Nu Validator after corrections were applied.
+
+Files validated:
+- index.html: 0 messages
+- sobre.html: 0 messages
+- projetos.html: 0 messages
+- voluntariado.html: 0 messages
+- doacoes.html: 0 messages
+- transparencia.html: 0 messages
+- blog.html: 0 messages
+- contato.html: 0 messages
+- checkout.html: 0 messages
+- obrigado.html: 0 messages
+
+Detailed JSON outputs (raw) follow for auditing purposes.
+
+--- index.json ---
+
+{"messages": [] , "language": "pt"}
+
+--- sobre.json ---
+
+{"messages": []}
+
+--- projetos.json ---
+
+{"messages": []}
+
+--- voluntariado.json ---
+
+{"messages": []}
+
+--- doacoes.json ---
+
+{"messages": []}
+
+--- transparencia.json ---
+
+{"messages": []}
+
+--- blog.json ---
+
+{"messages": []}
+
+--- contato.json ---
+
+{"messages": []}
+
+--- checkout.json ---
+
+{"messages": []}
+
+--- obrigado.json ---
+
+{"messages": []}
+
+End of report.

@@ -1,0 +1,113 @@
+/* Estilos básicos para a Plataforma ONG */
+:root{
+  --bg:#f7f7f9;
+  --accent:#2b8a9e;
+  --text:#222;
+  --muted:#666;
+  --card:#ffffff;
+}
+*{box-sizing:border-box}
+body{font-family:Inter,system-ui,Arial,Helvetica,sans-serif;margin:0;background:var(--bg);color:var(--text);line-height:1.6}
+header{background:#fff;padding:18px 20px;border-bottom:1px solid #e6e6e6}
+header h1{margin:0;font-size:20px;color:var(--accent);font-weight:700}
+nav ul{list-style:none;padding:0;margin:12px 0 0;display:flex;gap:12px;flex-wrap:wrap}
+nav a{color:var(--text);text-decoration:none;padding:8px 10px;border-radius:6px;font-weight:600}
+nav a.active, nav a:hover{background:var(--accent);color:#fff}
+main{max-width:1100px;margin:28px auto;padding:0 16px}
+section{background:var(--card);padding:20px;border-radius:10px;box-shadow:0 6px 18px rgba(20,20,40,0.04);margin-bottom:20px}
+h2{margin-top:0;color:var(--accent);font-size:20px}
+
+/* Hero */
+.hero{display:flex;flex-direction:column;gap:12px;padding:28px;border-radius:10px;background:linear-gradient(180deg,#ffffff 0%, #f1fbfd 100%);align-items:flex-start}
+.hero h2{font-size:28px;margin:0}
+.hero p{color:var(--muted);max-width:800px}
+
+/* Grid de equipe/projetos */
+.grid{display:grid;grid-template-columns:1fr;gap:16px}
+@media(min-width:720px){.grid{grid-template-columns:repeat(3,1fr)}}
+.card{background:var(--card);padding:14px;border-radius:8px;border:1px solid #eef5f6}
+.card h3{margin:0 0 8px;font-size:16px;color:var(--accent)}
+.card p{margin:0;color:var(--muted);font-size:14px}
+
+.team-member{display:flex;gap:12px;align-items:center}
+.avatar{width:64px;height:64px;border-radius:50%;background:#e6f6f8;display:inline-block;flex:0 0 64px}
+.member-info h4{margin:0;font-size:15px}
+.member-info p{margin:4px 0 0;color:var(--muted);font-size:13px}
+
+/* Footer + social */
+footer{margin-top:28px;padding:18px 20px;background:#fff;border-top:1px solid #e6e6e6;display:flex;flex-direction:column;gap:12px}
+.social{display:flex;gap:12px;align-items:center}
+.social a{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:6px;background:#f3f8f9;border:1px solid #e6eef0;color:var(--accent);text-decoration:none}
+.social a svg{width:18px;height:18px;fill:var(--accent)}
+.footer-meta{display:flex;flex-direction:column;gap:6px}
+footer p{margin:0;color:var(--muted);font-size:14px}
+
+form input[type="text"], form input[type="email"], form textarea{width:100%;padding:10px;margin:6px 0 12px;border:1px solid #e6eef0;border-radius:6px}
+form button{background:var(--accent);color:#fff;border:none;padding:10px 14px;border-radius:6px;cursor:pointer}
+
+@media(min-width:700px){nav ul{gap:18px}.footer-meta{flex-direction:row;justify-content:space-between;align-items:center}}
+
+/* Galeria de projetos */
+.galeria{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:16px}
+@media(min-width:720px){.galeria{grid-template-columns:repeat(4,1fr)}}
+.galeria figure{background:var(--card);padding:8px;border-radius:8px;overflow:hidden;text-align:center;border:1px solid #eef5f6}
+.galeria img{width:100%;height:160px;object-fit:cover;border-radius:6px}
+.galeria figcaption{margin-top:8px;color:var(--muted);font-size:14px}
+
+/* Transparência: canvases */
+#graficoPizza, #graficoLinha, #graficoBarras{max-width:100%;height:auto;margin:12px 0}
+
+/* Doações */
+.doacao-intro{display:grid;gap:12px}
+.donation-methods{display:flex;flex-direction:column;gap:10px;margin-top:12px}
+@media(min-width:720px){.donation-methods{flex-direction:row}}
+.method{background:var(--card);padding:12px;border-radius:8px;border:1px solid #eef5f6;flex:1}
+.method h4{margin:0 0 8px;color:var(--accent)}
+.campaign{background:var(--card);padding:12px;border-radius:8px;border:1px solid #eef5f6;margin-top:12px}
+.progress{background:#f1f6f7;border-radius:8px;overflow:hidden;height:14px}
+.progress > span{display:block;height:100%;background:var(--accent);border-radius:8px}
+.donate-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}
+.btn-primary{background:var(--accent);color:#fff;padding:10px 16px;border-radius:8px;text-decoration:none;font-weight:700}
+.note{font-size:14px;color:var(--muted);margin-top:8px}
+
+/* Homepage specific styles */
+.hero{display:flex;flex-direction:column;gap:18px;padding:28px;border-radius:10px;background:linear-gradient(180deg,#ffffff 0%, #f1fbfd 100%);align-items:stretch}
+.hero-content{max-width:720px}
+.hero-ctas{display:flex;gap:12px;margin-top:12px}
+.btn-secondary{background:#eef6f8;color:var(--accent);padding:10px 16px;border-radius:8px;text-decoration:none;font-weight:700;border:1px solid rgba(43,138,158,0.12)}
+.hero-stats{display:flex;gap:12px;flex-wrap:wrap;margin-top:6px}
+.stat{background:linear-gradient(180deg,#fff,#fbffff);padding:12px;border-radius:8px;border:1px solid #eef6f7;flex:1;text-align:center}
+.stat strong{display:block;font-size:18px;color:var(--accent)}
+.stat span{display:block;color:var(--muted);font-size:13px}
+
+.featured-projects .projects-grid{display:grid;grid-template-columns:repeat(1,1fr);gap:12px}
+@media(min-width:640px){.featured-projects .projects-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1000px){.featured-projects .projects-grid{grid-template-columns:repeat(4,1fr)}}
+.project{background:var(--card);padding:12px;border-radius:8px;border:1px solid #eef5f6;text-align:center}
+.project img{width:100%;height:140px;object-fit:cover;border-radius:6px}
+.project h4{margin:8px 0 6px;color:var(--accent)}
+.project p{margin:0;color:var(--muted);font-size:14px}
+.featured-projects .more{text-align:right;margin-top:10px}
+
+.campaigns-events{display:grid;grid-template-columns:1fr;gap:12px}
+@media(min-width:860px){.campaigns-events{grid-template-columns:2fr 1fr}}
+
+.testimonials blockquote{background:#f9ffff;padding:14px;border-left:4px solid var(--accent);border-radius:6px;margin:10px 0;color:var(--text)}
+.testimonials cite{display:block;margin-top:8px;color:var(--muted);font-size:13px}
+.testimonial-list{display:grid;gap:12px}
+
+.newsletter-cta form{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:8px}
+.newsletter-cta input[type="email"]{flex:1;max-width:420px}
+
+/* small helpers */
+.more a{color:var(--accent);text-decoration:none;font-weight:600}
+
+/* Footer preference checkbox styling */
+.pref-item{display:inline-flex;align-items:center;gap:6px;margin-right:10px}
+
+/* Make video responsive */
+video{max-width:100%;height:auto;border-radius:8px}
+
+
+
+
