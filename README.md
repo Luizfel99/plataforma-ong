@@ -1,73 +1,72 @@
-# Plataforma ONG — Como disponibilizar o site para sua professora
----
+# Plataforma ONG — Como disponibilizar o site
 
-Visite o site publicado (GitHub Pages):
+Visite a versão publicada: https://Luizfel99.github.io/plataforma-ong/
 
 [![Website status](https://img.shields.io/website?down_color=red&down_message=down&up_color=brightgreen&up_message=up&url=https%3A%2F%2FLuizfel99.github.io%2Fplataforma-ong%2F)](https://Luizfel99.github.io/plataforma-ong/)
 
-Comandos rápidos para rodar o servidor local (Windows PowerShell):
+Este repositório contém um site estático (HTML/CSS/JS). Abaixo há instruções para publicar o site (deploy) e para rodar localmente em Windows, macOS e Linux.
 
-- Iniciar (em primeiro plano, logs visíveis):
+Opções rápidas de deploy
 
-```powershell
-cd 'C:\Users\luizf\OneDrive\Desktop\plataforma-ong'
-.
-\scripts\start_server_port3000_console.ps1
-```
+- GitHub Pages (recomendado para sites estáticos)
+- Netlify / Vercel (simples e com CI/CD)
+- Ngrok / LocalTunnel (túnel temporário para demonstrações)
 
-- Parar (por PID ou nome):
+Obs.: já adicionei um workflow GitHub Actions (`.github/workflows/deploy_pages.yml`) que publica o site automaticamente quando você der push na branch `main`.
 
-```powershell
+Como rodar localmente (passo a passo)
 
-- GitHub Pages (gratuito) — publica direto do repositório GitHub. Bom para sites estáticos simples.
-- Netlify / Vercel (gratuito para uso básico) — arrastar e soltar ou conectar ao repositório para deploy automático.
-- Ngrok / LocalTunnel — expõe temporariamente seu servidor local (útil para demonstrações rápidas). A URL exposta dura enquanto o túnel estiver ativo.
-
-```
-
-Arquivos adicionados por mim nesta pasta:
-- `.github/workflows/deploy_pages.yml` — workflow que publica para GitHub Pages ao dar push em `main`.
-Escolha recomendada: GitHub Pages (simples e permanente). Abaixo tem instruções rápidas para cada opção.
-
-1) GitHub Pages (recomendado)
-
-- Crie um repositório no GitHub (ou use um existente).
-- No seu computador, no diretório do projeto, rode:
+Windows (PowerShell)
 
 ```powershell
 cd 'C:\Users\luizf\OneDrive\Desktop\plataforma-ong'
-git init  # só se ainda não houver .git
-git add .
-git commit -m "site: initial commit"
-git remote add origin https://github.com/<seu-usuario>/<seu-repo>.git
-git push -u origin main
+# iniciar em foreground (ver logs):
+.\scripts\start_server_port3000_console.ps1
+
+# iniciar e abrir o navegador automaticamente (press Enter para parar):
+.\scripts\start_server_and_open.ps1
 ```
 
-- No GitHub, abra Settings → Pages (ou Pages na barra lateral). Em "Build and deployment" selecione "Deploy from a branch" e escolha `main` como branch e `/ (root)` como pasta. Salve.
-- Após alguns minutos o site estará disponível em `https://<seu-usuario>.github.io/<seu-repo>/`.
+macOS / Linux (bash)
 
-Observação: criei um workflow de GitHub Actions que publica automaticamente o conteúdo do repositório para Pages sempre que você der push na `main` (arquivo: `.github/workflows/deploy_pages.yml`). Basta pushar para `main`.
+```bash
+cd ~/Desktop/plataforma-ong
+# tornar executável e rodar
+chmod +x scripts/start_server_and_open.sh
+./scripts/start_server_and_open.sh
+```
 
-2) Netlify (arrastar e soltar — muito simples)
+Parando o servidor (Windows PowerShell)
 
-- Faça login em https://app.netlify.com/ (crie conta gratuita).
-- Arraste a pasta do projeto (a raiz com `index.html`) para a área "Sites" → "Drop your site folder here".
-- Netlify fará upload e retornará uma URL pública.
+```powershell
+# Pare por PID (substitua <PID> pelo número mostrado)
+Stop-Process -Id <PID> -Force
 
-3) Demo temporária com ngrok (rápido, não é permanente)
+# Ou pare todos os processos node (use com cuidado)
+Get-Process -Name node -ErrorAction SilentlyContinue | Stop-Process -Force
+```
 
-- Baixe ngrok em https://ngrok.com/ e instale.
-- Rode seu servidor local (já tem script `scripts\start_server_port3000_console.ps1`). Depois, no PowerShell:
+Deploy rápido com ngrok (tempo limitado)
 
 ```powershell
 ngrok http 3000
 ```
 
-- O ngrok exibirá um endereço público (https://...). Compartilhe essa URL com sua professora. Quando você fechar o túnel ou desligar seu computador, a URL deixa de funcionar.
+Opções de publicação
 
-Se quiser que eu crie o README de forma diferente, ou se prefere que eu gere/ajude a criar o repositório no GitHub e os commits necessários (você precisará apenas fazer o push — eu não tenho credenciais para empurrar para o seu GitHub), diga e eu preparo os arquivos necessários.
+1) GitHub Pages
 
----
+ - Faça push para `main` no GitHub; o workflow irá publicar automaticamente.
+ - O site ficará em: `https://<seu-usuario>.github.io/<seu-repo>/` (no seu caso: `https://Luizfel99.github.io/plataforma-ong/`).
 
-Arquivos adicionados por mim nesta pasta:
+2) Netlify
+
+ - Crie conta em netlify.com e arraste a pasta do projeto para publicar.
+
+3) Ngrok
+
+ - Use para demonstrações temporárias (a URL expira quando o túnel fecha).
+
+Arquivos importantes adicionados
+
 - `.github/workflows/deploy_pages.yml` — workflow que publica para GitHub Pages ao dar push em `main`.
