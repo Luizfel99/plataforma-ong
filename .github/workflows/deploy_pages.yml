@@ -4,6 +4,11 @@ on:
   push:
     branches: [ main ]
 
+# Ensure workflow has permissions to update branches/pages
+permissions:
+  contents: write
+  pages: write
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
@@ -13,6 +18,21 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          # ensure we have credentials to push
+          persist-credentials: true
+
+      - name: Diagnostic: git and repo info
+        run: |
+          echo "--- git version ---"
+          git --version
+          echo "\n--- git config list ---"
+          git config --list
+          echo "\n--- remotes ---"
+          git remote -v
+          echo "\n--- branches ---"
+          git branch -a
+          echo "\n--- status ---"
+          git status --porcelain
 
       - name: Setup Git user
         run: |
