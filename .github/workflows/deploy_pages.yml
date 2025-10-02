@@ -4,45 +4,29 @@ on:
   push:
     branches: [ main ]
 
-# Ensure workflow has permissions to update branches/pages
+# Use minimal required permissions for the Pages workflow
 permissions:
-  contents: write
+  contents: read
   pages: write
+  id-token: write
 
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          # ensure we have credentials to push
-          persist-credentials: true
 
-      - name: Diagnostic: git and repo info
-        run: |
-          echo "--- git version ---"
-          git --version
-          echo "\n--- git config list ---"
-          git config --list
-          echo "\n--- remotes ---"
-          git remote -v
-          echo "\n--- branches ---"
-          git branch -a
-          echo "\n--- status ---"
-          git status --porcelain
+      - name: Configure Pages
+        uses: actions/configure-pages@v3
 
-      - name: Setup Git user
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-
-      - name: Deploy to gh-pages
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Upload static content
+        uses: actions/upload-pages-artifact@v1
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./
-          publish_branch: gh-pages
-          force_orphan: true
+          path: './'
+
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v1
