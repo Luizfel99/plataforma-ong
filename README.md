@@ -1,13 +1,32 @@
 # Plataforma ONG — Como disponibilizar o site para sua professora
+---
 
-Este repositório contém um site estático (HTML/CSS/JS). Se você fechar seu computador, o servidor local deixará de responder e ninguém poderá acessar o site. Para que sua professora (ou qualquer outra pessoa) acesse o site online, você precisa publicar (deploy) os arquivos para um serviço público.
+Visite o site publicado (GitHub Pages):
 
-Opções recomendadas (rápidas):
+[![Website status](https://img.shields.io/website?down_color=red&down_message=down&up_color=brightgreen&up_message=up&url=https%3A%2F%2FLuizfel99.github.io%2Fplataforma-ong%2F)](https://Luizfel99.github.io/plataforma-ong/)
+
+Comandos rápidos para rodar o servidor local (Windows PowerShell):
+
+- Iniciar (em primeiro plano, logs visíveis):
+
+```powershell
+cd 'C:\Users\luizf\OneDrive\Desktop\plataforma-ong'
+.
+\scripts\start_server_port3000_console.ps1
+```
+
+- Parar (por PID ou nome):
+
+```powershell
 
 - GitHub Pages (gratuito) — publica direto do repositório GitHub. Bom para sites estáticos simples.
 - Netlify / Vercel (gratuito para uso básico) — arrastar e soltar ou conectar ao repositório para deploy automático.
 - Ngrok / LocalTunnel — expõe temporariamente seu servidor local (útil para demonstrações rápidas). A URL exposta dura enquanto o túnel estiver ativo.
 
+```
+
+Arquivos adicionados por mim nesta pasta:
+- `.github/workflows/deploy_pages.yml` — workflow que publica para GitHub Pages ao dar push em `main`.
 Escolha recomendada: GitHub Pages (simples e permanente). Abaixo tem instruções rápidas para cada opção.
 
 1) GitHub Pages (recomendado)
