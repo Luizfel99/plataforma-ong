@@ -1,25 +1,32 @@
-/* _tokens.css
-   Design tokens: colors, spacing, radii, font sizes.
-*/
-:root {
-  /* colors */
-  --color-primary: #00695c;
-  --color-accent: #ffd54f;
-  --color-bg: #ffffff;
-  --color-text: #222222;
+:root{
+  /* Cores (8+ no total) */
+  --color-primary-600:#1E88E5; --color-primary-500:#2196F3; --color-primary-400:#42A5F5;
+  --color-secondary-600:#8E24AA; --color-secondary-500:#9C27B0; --color-secondary-400:#AB47BC;
+  --color-success-500:#2E7D32; --color-warning-500:#F9A825; --color-danger-500:#D32F2F; --color-info-500:#1976D2;
+  --gray-900:#111827; --gray-800:#1F2937; --gray-700:#374151; --gray-600:#4B5563; --gray-500:#6B7280;
+  --gray-300:#D1D5DB; --gray-200:#E5E7EB; --gray-100:#F3F4F6; --white:#FFF;
 
-  /* spacing */
-  --space-xs: 4px;
-  --space-sm: 8px;
-  --space-md: 16px;
-  --space-lg: 24px;
+  /* Tipografia */
+  --font-sans:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;
 
-  /* radii */
-  --radius-sm: 4px;
-  --radius-md: 8px;
+  /* Hierarquia (≥5) */
+  --fs-100:12px; --fs-200:14px; --fs-300:16px; --fs-400:18px; --fs-500:20px; --fs-600:24px; --fs-700:32px; --fs-800:40px;
 
-  /* typography */
-  --font-base: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  --font-size-base: 16px;
-  --line-height-base: 1.5;
+  /* Espaçamentos (8 / 16 / 24 / 32 / 48 / 64) */
+  --space-1:8px; --space-2:16px; --space-3:24px; --space-4:32px; --space-5:48px; --space-6:64px;
+
+  /* Radius & sombras */
+  --radius-sm:6px; --radius-md:10px; --radius-lg:16px;
+  --shadow-sm:0 1px 2px rgba(0,0,0,.06);
+  --shadow-md:0 6px 16px rgba(0,0,0,.10);
+  --shadow-lg:0 12px 30px rgba(0,0,0,.16);
+
+  /* Containers */
+  --container-sm:540px; --container-md:720px; --container-lg:960px; --container-xl:1140px;
+
+  /* Z-index */
+  --z-nav:1000; --z-modal:1100; --z-toast:1200;
+
+  /* Breakpoints (≥5) */
+  --bp-xs:360px; --bp-sm:480px; --bp-md:768px; --bp-lg:1024px; --bp-xl:1280px;
 }
