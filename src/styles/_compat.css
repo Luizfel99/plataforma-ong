@@ -13,3 +13,22 @@
 /* Ensure inline SVG social icons are constrained to a sensible size */
 .social a svg, footer .social svg { width:18px !important; height:18px !important; display:block; }
 .social a, footer .social a { width:36px !important; height:36px !important; }
+
+/* Fallback for legacy header/nav markup (pages not yet migrated) */
+header{background:var(--white);box-shadow:var(--shadow-sm);position:sticky;top:0;z-index:var(--z-nav)}
+header h1{margin:0;padding:var(--space-2);font-size:var(--fs-400);color:var(--gray-900)}
+header nav{display:block}
+header nav ul{list-style:none;margin:0;padding:0;display:flex;gap:var(--space-3);align-items:center}
+header nav ul li{margin:0}
+header nav a{color:var(--gray-700);text-decoration:none;padding:var(--space-1) var(--space-2);border-radius:var(--radius-sm)}
+header nav a:hover, header nav a:focus{background:var(--gray-100)}
+header nav a[aria-current="page"]{font-weight:700}
+@media(max-width:768px){
+  header nav ul{flex-direction:column;padding:var(--space-2) 0}
+}
+
+/* Video fallback styling */
+.video-fallback{background:var(--white);border:1px solid var(--gray-200);padding:var(--space-3);border-radius:var(--radius-md);box-shadow:var(--shadow-sm)}
+.video-fallback strong{display:block;margin-bottom:8px;font-size:var(--fs-500);color:var(--gray-900)}
+.video-fallback p{margin:0 0 var(--space-2);color:var(--gray-700)}
+.video-fallback a{color:var(--color-primary-500);text-decoration:none;font-weight:600}
