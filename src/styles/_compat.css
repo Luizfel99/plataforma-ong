@@ -10,3 +10,6 @@
 
 /* map old utility names to new BEM-ish variants */
 .badge{ /* ensure badges present */ display:inline-block;padding:2px 8px;border-radius:999px;font-size:var(--fs-200);font-weight:600;border:1px solid transparent }
+/* Ensure inline SVG social icons are constrained to a sensible size */
+.social a svg, footer .social svg { width:18px !important; height:18px !important; display:block; }
+.social a, footer .social a { width:36px !important; height:36px !important; }
