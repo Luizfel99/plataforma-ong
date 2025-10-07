@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Informações sobre a ONG, equipe e conquistas.">
   <title>Plataforma ONG - Sobre</title>
-  <link rel="stylesheet" href="src/styles/main.css">
+  <link rel="stylesheet" href="dist/styles.css">
 </head>
 <body>
   <header>
@@ -82,8 +82,8 @@
     
     <section>
       <h2>Vídeo Institucional</h2>
-      <video controls width="600" aria-label="Vídeo institucional da Plataforma ONG">
-        <source src="assets/video/institucional.mp4" type="video/mp4">
+      <video controls width="600" preload="none" aria-label="Vídeo institucional da Plataforma ONG">
+        <source data-src="assets/video/institucional.mp4" type="video/mp4">
         <track kind="captions" src="assets/video/institucional.vtt" srclang="pt" label="Português" default>
         Seu navegador não suporta vídeos HTML5.
       </video>
