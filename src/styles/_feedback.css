@@ -1,7 +1,14 @@
 /* _feedback.css
-   Alerts, toasts, validation messages
+   Alerts, toasts, modals and other user feedback patterns
 */
-.alert { padding: .75rem 1rem; border-radius: var(--radius-sm); }
-.alert--success { background: #e8f5e9; color: #256029; }
-.alert--error { background: #ffebee; color: #b71c1c; }
-.toast { position: fixed; right: var(--space-md); top: var(--space-md); }
+.alert{border:1px solid var(--gray-300);border-left-width:4px;padding:var(--space-2) var(--space-3);border-radius:var(--radius-sm);background:var(--white)}
+.alert--success{border-left-color:var(--color-success-500)}
+.alert--warning{border-left-color:var(--color-warning-500)}
+.alert--danger{border-left-color:var(--color-danger-500)}
+
+.toast-container{position:fixed;right:var(--space-3);top:var(--space-3);z-index:var(--z-toast);display:grid;gap:var(--space-2)}
+.toast{background:var(--gray-900);color:var(--white);padding:var(--space-2) var(--space-3);border-radius:var(--radius-sm);box-shadow:var(--shadow-md);opacity:.98}
+
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);display:none;align-items:center;justify-content:center;z-index:var(--z-modal)}
+.modal{background:var(--white);width:min(560px,92vw);border-radius:var(--radius-md);box-shadow:var(--shadow-lg);padding:var(--space-3)}
+.modal[open] + .modal-overlay,.modal-overlay[aria-hidden="false"]{display:flex}
