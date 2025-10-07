@@ -2,7 +2,7 @@
 # Start the simple static server and open the default browser (Linux/macOS)
 set -e
 
-PORT=3000
+PORT=4000
 PROJECT_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 
 if ! command -v node >/dev/null 2>&1; then

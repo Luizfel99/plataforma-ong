@@ -1,5 +1,5 @@
 # Starts the static server in the current console and opens the default browser to the site
-$port = 3000
+$port = 4000
 $projectRoot = Split-Path -Parent $PSScriptRoot
 
 # Ensure node exists

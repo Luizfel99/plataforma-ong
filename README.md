@@ -49,7 +49,7 @@ Get-Process -Name node -ErrorAction SilentlyContinue | Stop-Process -Force
 Deploy rápido com ngrok (tempo limitado)
 
 ```powershell
-ngrok http 3000
+ngrok http 4000
 ```
 
 Opções de publicação

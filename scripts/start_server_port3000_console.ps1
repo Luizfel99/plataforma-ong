@@ -1,8 +1,8 @@
-# Starts the simple static server in the current console window on port 3000
+# Starts the simple static server in the current console window on port 4000
 # If the port is already in use, the script will print the PID and exit.
 param()
 
-$port = 3000
+$port = 4000
 
 function Test-PortListening($p) {
     $res = Test-NetConnection -ComputerName 127.0.0.1 -Port $p -WarningAction SilentlyContinue
