@@ -1,4 +1,18 @@
 /* _animations.css
+   Micro-interactions and reduced-motion support
+*/
+.fade-in{opacity:0;animation:fade-in .24s ease forwards}
+@keyframes fade-in{to{opacity:1}}
+.scale-in{transform:scale(.98);opacity:0;animation:scale-in .18s ease forwards}
+@keyframes scale-in{to{transform:scale(1);opacity:1}}
+.btn{transition:background .2s ease,transform .08s ease,box-shadow .2s ease}
+.btn:hover{box-shadow:var(--shadow-md)}
+
+@media(prefers-reduced-motion:reduce){
+  *{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
+}
+
+/* _animations.css
    Keyframes and transition helpers
 */
 @keyframes fadeIn {
