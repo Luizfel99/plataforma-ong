@@ -8,20 +8,24 @@
   <link rel="stylesheet" href="src/styles/main.css">
 </head>
 <body>
-  <header>
-    <h1>Plataforma ONG</h1>
-    <nav>
-      <ul>
-  <li><a href="index.html" aria-current="page">Início</a></li>
-        <li><a href="sobre.html">Sobre</a></li>
-        <li><a href="projetos.html">Projetos</a></li>
-        <li><a href="voluntariado.html">Voluntariado</a></li>
-        <li><a href="doacoes.html">Doações</a></li>
-        <li><a href="transparencia.html">Transparência</a></li>
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="contato.html">Contato</a></li>
-      </ul>
-    </nav>
+  <header class="navbar">
+    <div class="container navbar__inner">
+      <a class="navbar__brand" href="#">Plataforma ONG</a>
+      <input type="checkbox" id="nav-toggle" aria-label="Abrir menu">
+      <label for="nav-toggle" class="navbar__hamburger">☰</label>
+      <nav class="navbar__menu" aria-label="Principal">
+        <a class="navbar__link" href="#">Início</a>
+        <div class="dropdown">
+          <button class="navbar__link" aria-haspopup="true" aria-expanded="false">Projetos</button>
+          <div class="dropdown__menu" role="menu">
+            <a class="navbar__link" href="#">Saúde</a>
+            <a class="navbar__link" href="#">Educação</a>
+            <a class="navbar__link" href="#">Meio Ambiente</a>
+          </div>
+        </div>
+        <a class="navbar__link" href="#">Doar</a>
+      </nav>
+    </div>
   </header>
 
   <main>
