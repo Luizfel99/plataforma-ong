@@ -51,4 +51,90 @@ document.addEventListener('DOMContentLoaded', function(){
     }
   }
   setupVideoPlaceholders();
+  // Theme controls: toggle dark mode and let user pick a primary color
+  (function setupThemeControls(){
+    const THEME_KEY = 'plataforma_theme';
+    const COLOR_KEY = 'plataforma_primary_color';
+
+    function applyTheme(theme){
+      if(theme === 'dark') document.documentElement.setAttribute('data-theme','dark');
+      else document.documentElement.removeAttribute('data-theme');
+    }
+    function applyPrimaryColor(hex){
+      if(!hex) return;
+      document.documentElement.style.setProperty('--color-primary-500', hex);
+      // derive darker/lighter variants very simplistically
+      try{
+        const n = parseInt(hex.replace('#',''),16);
+        const r = (n>>16)&255, g=(n>>8)&255, b=n&255;
+        const darker = '#'+((1<<24) + ((r*0.85|0)<<16) + ((g*0.85|0)<<8) + (b*0.85|0)).toString(16).slice(1);
+        const lighter = '#'+((1<<24) + ((Math.min(255,r*1.15)|0)<<16) + ((Math.min(255,g*1.15)|0)<<8) + (Math.min(255,b*1.15)|0)).toString(16).slice(1);
+        document.documentElement.style.setProperty('--color-primary-600', darker);
+        document.documentElement.style.setProperty('--color-primary-400', lighter);
+      }catch(e){/* noop */}
+    }
+
+    // Read persisted prefs
+    const savedTheme = localStorage.getItem(THEME_KEY) || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    const savedColor = localStorage.getItem(COLOR_KEY) || null;
+    applyTheme(savedTheme);
+    if(savedColor) applyPrimaryColor(savedColor);
+
+    // Inject controls in the page footer if not present
+    const existing = document.getElementById('theme-controls');
+    if(existing) return;
+
+    const controls = document.createElement('div');
+    controls.id = 'theme-controls';
+    controls.style.position = 'fixed';
+    controls.style.right = '12px';
+    controls.style.bottom = '12px';
+    controls.style.background = 'var(--surface)';
+    controls.style.border = '1px solid var(--card-border)';
+    controls.style.borderRadius = '8px';
+    controls.style.padding = '8px';
+    controls.style.zIndex = 9999;
+    controls.style.boxShadow = 'var(--shadow-sm)';
+
+    const toggle = document.createElement('button');
+    toggle.textContent = savedTheme === 'dark' ? '🌙' : '☀️';
+    toggle.title = 'Alternar tema (clique)';
+    toggle.style.marginRight = '8px';
+    toggle.addEventListener('click', function(){
+      const cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+      const next = cur === 'dark' ? 'light' : 'dark';
+      applyTheme(next);
+      toggle.textContent = next === 'dark' ? '🌙' : '☀️';
+      localStorage.setItem(THEME_KEY, next);
+    });
+
+    const colorInput = document.createElement('input');
+    colorInput.type = 'color';
+    colorInput.title = 'Escolher cor primária';
+    colorInput.value = savedColor || '#2196F3';
+    colorInput.addEventListener('input', function(){
+      const val = colorInput.value;
+      applyPrimaryColor(val);
+      localStorage.setItem(COLOR_KEY, val);
+    });
+
+    const reset = document.createElement('button');
+    reset.textContent = 'Reset';
+    reset.style.marginLeft = '8px';
+    reset.addEventListener('click', function(){
+      localStorage.removeItem(THEME_KEY);
+      localStorage.removeItem(COLOR_KEY);
+      document.documentElement.removeAttribute('data-theme');
+      document.documentElement.style.removeProperty('--color-primary-500');
+      document.documentElement.style.removeProperty('--color-primary-600');
+      document.documentElement.style.removeProperty('--color-primary-400');
+      toggle.textContent = '☀️';
+      colorInput.value = '#2196F3';
+    });
+
+    controls.appendChild(toggle);
+    controls.appendChild(colorInput);
+    controls.appendChild(reset);
+    document.body.appendChild(controls);
+  })();
 });

@@ -32,3 +32,30 @@
   /* Breakpoints (≥5) */
   --bp-xs:360px; --bp-sm:480px; --bp-md:768px; --bp-lg:1024px; --bp-xl:1280px;
 }
+
+/* Semantic surface/text tokens built on top of the color palette */
+:root{
+  --bg: var(--gray-100);
+  --surface: var(--white);
+  --text: var(--gray-800);
+  --muted: var(--gray-600);
+  --card-border: var(--gray-200);
+  --focus-ring: rgba(33,150,243,.35);
+}
+
+/* Dark theme: switch by setting `data-theme="dark"` on <html> or <body> */
+[data-theme="dark"]{
+  --bg: #0b1220; /* page background */
+  --surface: #0f1724; /* cards, panels */
+  --text: #e6eef8; /* main text */
+  --muted: #9aa6b2; /* secondary text */
+  --card-border: rgba(255,255,255,0.04);
+  --focus-ring: rgba(66,165,245,.24);
+  /* alternate neutral scale for dark */
+  --gray-100: #0b1220;
+  --gray-200: #111827;
+  --gray-300: #14202b;
+  --gray-500: #9aa6b2;
+  --white: #0b1220; /* careful: used only as fallback */
+  color-scheme: dark;
+}
