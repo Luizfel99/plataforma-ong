@@ -4,6 +4,10 @@
 .form{display:grid;gap:var(--space-2)}
 .label{font-weight:600}
 .input,.select,.textarea{width:100%;padding:10px 12px;border-radius:var(--radius-sm);border:1px solid var(--gray-300);background:var(--white);transition:border-color .2s ease,box-shadow .2s ease}
+.form, form, fieldset {box-sizing: border-box; width:100%}
+fieldset{padding:var(--space-2);margin:0;border:1px solid var(--gray-200);border-radius:var(--radius-sm);background:var(--white)}
+fieldset legend{font-weight:700;padding:0 6px}
+input[type="text"], input[type="email"], input[type="file"], textarea, select {max-width:100%;box-sizing:border-box}
 .input:focus,.select:focus,.textarea:focus{border-color:var(--color-primary-400);box-shadow:0 0 0 3px rgba(66,165,245,.25);outline:none}
 
 .is-valid{border-color:#34A853}
