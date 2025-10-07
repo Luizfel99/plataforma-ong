@@ -1,6 +1,27 @@
 /* _layout.css
-   Grid and layout helpers
+   12-column grid, responsive helpers and flex utilities
 */
-.container { max-width: 1100px; margin: 0 auto; padding: 0 var(--space-md); }
-.grid { display: grid; gap: var(--space-lg); }
-.header, .footer { background: var(--color-primary); color: white; }
+.container{width:100%;margin:0 auto;max-width:var(--container-xl);padding:0 var(--space-2)}
+.row{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--space-2)}
+[class^="col-"]{min-width:0}
+.col-1{grid-column:span 1}.col-2{grid-column:span 2}.col-3{grid-column:span 3}.col-4{grid-column:span 4}
+.col-5{grid-column:span 5}.col-6{grid-column:span 6}.col-7{grid-column:span 7}.col-8{grid-column:span 8}
+.col-9{grid-column:span 9}.col-10{grid-column:span 10}.col-11{grid-column:span 11}.col-12{grid-column:span 12}
+
+/* Breakpoints */
+@media(min-width:480px){.col-sm-6{grid-column:span 6}.col-sm-12{grid-column:span 12}}
+@media(min-width:768px){.col-md-4{grid-column:span 4}.col-md-6{grid-column:span 6}}
+@media(min-width:1024px){.col-lg-3{grid-column:span 3}.col-lg-4{grid-column:span 4}}
+@media(min-width:1280px){.col-xl-2{grid-column:span 2}}
+
+/* Flex helpers */
+.flex{display:flex}.items-center{align-items:center}.justify-between{justify-content:space-between}
+.gap-2{gap:var(--space-2)}.gap-3{gap:var(--space-3)}
+.mt-2{margin-top:var(--space-2)}.mb-3{margin-bottom:var(--space-3)}
+.p-2{padding:var(--space-2)}.p-3{padding:var(--space-3)}
+
+/* Hero e grid de cards (exemplo) */
+.hero{background:linear-gradient(135deg,var(--color-primary-500),var(--color-secondary-500));color:var(--white);border-radius:var(--radius-lg);padding:var(--space-5) var(--space-4);box-shadow:var(--shadow-lg)}
+.grid-cards{display:grid;grid-template-columns:repeat(1,1fr);gap:var(--space-3)}
+@media(min-width:768px){.grid-cards{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1024px){.grid-cards{grid-template-columns:repeat(3,1fr)}}
