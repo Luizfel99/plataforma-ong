@@ -1,6 +1,24 @@
 /* _components.css
    Reusable UI components: buttons, cards, badges
 */
-.btn { display:inline-block; padding: .5rem 1rem; border-radius: var(--radius-sm); text-decoration:none; }
-.btn-primary { background: var(--color-primary); color: white; }
-.card { background: white; border-radius: var(--radius-md); box-shadow: 0 2px 8px rgba(0,0,0,0.08); padding: var(--space-md); }
+.card{background:var(--white);border:1px solid var(--gray-200);border-radius:var(--radius-md);box-shadow:var(--shadow-sm);overflow:hidden}
+.card__media img{width:100%;height:auto;display:block}
+.card__body{padding:var(--space-3)}
+.card__title{font-size:var(--fs-500);margin:0 0 var(--space-1)}
+.card__meta{color:var(--gray-600);font-size:var(--fs-200)}
+.card--highlight{border-color:var(--color-primary-400);box-shadow:var(--shadow-md)}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:10px 16px;border-radius:var(--radius-sm);font-weight:600;text-decoration:none;cursor:pointer;user-select:none;transition:background .2s ease,transform .08s ease,box-shadow .2s ease;border:1px solid transparent}
+.btn:focus-visible{outline:3px solid rgba(33,150,243,.35);outline-offset:2px}
+.btn--primary{background:var(--color-primary-500);color:var(--white)}
+.btn--primary:hover{background:var(--color-primary-600)}
+.btn--ghost{background:transparent;color:var(--gray-800);border-color:var(--gray-300)}
+.btn--ghost:hover{background:var(--gray-100)}
+.btn:active{transform:translateY(1px)}
+.btn:disabled{opacity:.6;pointer-events:none}
+
+.badge{display:inline-block;padding:2px 8px;border-radius:999px;font-size:var(--fs-200);font-weight:600;border:1px solid transparent}
+.badge--success{background:#E8F5E9;color:#1B5E20;border-color:#C8E6C9}
+.badge--warning{background:#FFF8E1;color:#8D6E00;border-color:#FFECB3}
+.badge--danger{background:#FFEBEE;color:#B71C1C;border-color:#FFCDD2}
+.badge--info{background:#E3F2FD;color:#0D47A1;border-color:#BBDEFB}
