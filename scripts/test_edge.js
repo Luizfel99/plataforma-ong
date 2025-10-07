@@ -9,7 +9,7 @@ const fs = require('fs');
     const context = await browser.newContext();
     const page = await context.newPage();
     for (const p of pages){
-      const url = 'http://127.0.0.1:3000' + p;
+  const url = 'http://127.0.0.1:3000' + p;
       let status='no-response';
       try{
         const res = await page.goto(url, { waitUntil: 'networkidle', timeout: 20000 });

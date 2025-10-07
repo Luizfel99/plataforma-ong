@@ -843,7 +843,7 @@
             "entity": "127.0.0.1"
           },
           {
-            "url": "http://127.0.0.1:3000/dist/styles.css",
+                        "url": "http://127.0.0.1:3000/dist/styles.css",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 16.615000069141388,

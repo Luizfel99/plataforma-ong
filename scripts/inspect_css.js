@@ -1,7 +1,7 @@
 const { chromium } = require('playwright');
 
 (async ()=>{
-  const host = process.env.HOST || 'http://127.0.0.1:4000';
+  const host = process.env.HOST || 'http://127.0.0.1:3000';
   const browser = await chromium.launch();
   const page = await browser.newPage();
   try {

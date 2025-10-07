@@ -25,21 +25,21 @@ Testes realizados com Playwright (headless). Resumo de status e erros de console
 
 ## Edge (msedge)
 
-- /  status: error: page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/
+ - /  status: error: page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/
 Call log:
-[2m  - navigating to "http://127.0.0.1:3000/", waiting until "networkidle"[22m
+[2m  - navigating to "http://127.0.0.1:4000/", waiting until "networkidle"[22m
 
-- /projetos.html  status: error: page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/projetos.html
+ - /projetos.html  status: error: page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/projetos.html
 Call log:
-[2m  - navigating to "http://127.0.0.1:3000/projetos.html", waiting until "networkidle"[22m
+[2m  - navigating to "http://127.0.0.1:4000/projetos.html", waiting until "networkidle"[22m
 
-- /doacoes.html  status: error: page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/doacoes.html
+ - /doacoes.html  status: error: page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/doacoes.html
 Call log:
-[2m  - navigating to "http://127.0.0.1:3000/doacoes.html", waiting until "networkidle"[22m
+[2m  - navigating to "http://127.0.0.1:4000/doacoes.html", waiting until "networkidle"[22m
 
-- /contato.html  status: error: page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/contato.html
+ - /contato.html  status: error: page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/contato.html
 Call log:
-[2m  - navigating to "http://127.0.0.1:3000/contato.html", waiting until "networkidle"[22m
+[2m  - navigating to "http://127.0.0.1:4000/contato.html", waiting until "networkidle"[22m
 
 
 ## Edge (msedge)

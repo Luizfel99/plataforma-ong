@@ -14,7 +14,7 @@
   1. npm ci
   2. npm run build:css:prod
   3. .\scripts\start_server_port3000.ps1 (ou com -Port 4000)
-  4. Abrir http://127.0.0.1:4000 e checar Início / Projetos / Doações / Contato
+  4. Abrir http://127.0.0.1:3000 e checar Início / Projetos / Doações / Contato
   5. Conferir docs/screenshots/ para evidências visuais
 
 - Locais de evidência rápida

@@ -21,7 +21,7 @@ Checklist final para esta atividade (status):
 
 Arquivos extras úteis:
 - `dist/styles.css` — build de produção
-- `scripts/start_server_port3000.ps1` — helper para rodar servidor local
+ - `scripts/start_server_port3000.ps1` — helper para rodar servidor local (default port: 4000)
 - `.github/workflows/pr-build.yml` — CI básico para PRs
 
 Próximos passos (opcionais):
