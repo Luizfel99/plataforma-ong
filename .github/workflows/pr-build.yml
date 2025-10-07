@@ -1,0 +1,30 @@
+name: PR — build and smoke
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+      - name: Install dependencies
+        run: npm ci
+      - name: Build production CSS
+        run: npm run build:css:prod
+      - name: Start static server (background)
+        run: |
+          node scripts/simple_static_server.js &
+          for i in {1..10}; do
+            if curl -fsS http://127.0.0.1:3000/__health >/dev/null 2>&1; then
+              echo "server ready"; break
+            fi
+            sleep 1
+          done
+      - name: Smoke check index
+        run: curl -fS --retry 3 http://127.0.0.1:3000/
