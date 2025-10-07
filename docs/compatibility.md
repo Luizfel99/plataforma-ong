@@ -41,3 +41,10 @@ Call log:
 Call log:
 [2m  - navigating to "http://127.0.0.1:3000/contato.html", waiting until "networkidle"[22m
 
+
+## Edge (msedge)
+
+- /  status: 200
+- /projetos.html  status: 200
+- /doacoes.html  status: 200
+- /contato.html  status: 200
