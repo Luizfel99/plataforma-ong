@@ -10,6 +10,7 @@
 @import './_forms.css';
 @import './_feedback.css';
 @import './_animations.css';
+@import './_compat.css';
 
 /* small utility */
 .hidden { display:none !important; }
