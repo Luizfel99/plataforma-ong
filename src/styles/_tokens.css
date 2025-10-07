@@ -1,0 +1,25 @@
+/* _tokens.css
+   Design tokens: colors, spacing, radii, font sizes.
+*/
+:root {
+  /* colors */
+  --color-primary: #00695c;
+  --color-accent: #ffd54f;
+  --color-bg: #ffffff;
+  --color-text: #222222;
+
+  /* spacing */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+
+  /* radii */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+
+  /* typography */
+  --font-base: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-size-base: 16px;
+  --line-height-base: 1.5;
+}

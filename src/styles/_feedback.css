@@ -1,0 +1,7 @@
+/* _feedback.css
+   Alerts, toasts, validation messages
+*/
+.alert { padding: .75rem 1rem; border-radius: var(--radius-sm); }
+.alert--success { background: #e8f5e9; color: #256029; }
+.alert--error { background: #ffebee; color: #b71c1c; }
+.toast { position: fixed; right: var(--space-md); top: var(--space-md); }

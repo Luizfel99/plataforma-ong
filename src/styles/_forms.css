@@ -1,0 +1,6 @@
+/* _forms.css
+   Form controls and spacing
+*/
+input,textarea,select { font: inherit; padding: .5rem; border: 1px solid #ddd; border-radius: var(--radius-sm); }
+label { display:block; margin-bottom: .25rem; }
+.form-row { display:flex; gap: var(--space-md); }
