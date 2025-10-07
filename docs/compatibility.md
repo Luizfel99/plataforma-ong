@@ -48,3 +48,10 @@ Call log:
 - /projetos.html  status: 200
 - /doacoes.html  status: 200
 - /contato.html  status: 200
+
+## Edge (msedge)
+
+- /  status: 200
+- /projetos.html  status: 200
+- /doacoes.html  status: 200
+- /contato.html  status: 200
