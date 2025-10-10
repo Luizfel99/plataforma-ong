@@ -1,0 +1,495 @@
+/* ============================================================================
+   SISTEMA RESPONSIVO AVANÇADO - 5+ BREAKPOINTS
+   Atividade 2: CSS3 Avançado com Design System Profissional
+   ============================================================================ */
+
+/* ========== RESET E BASE ========== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family-primary);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-normal);
+  color: var(--theme-text-primary);
+  background-color: var(--theme-bg-primary);
+  transition: var(--transition-colors);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ========== CONTAINER SYSTEM ========== */
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding-left: var(--spacing-4);
+  padding-right: var(--spacing-4);
+}
+
+.container-fluid {
+  width: 100%;
+  padding-left: var(--spacing-4);
+  padding-right: var(--spacing-4);
+}
+
+/* ========== BREAKPOINT 1: MOBILE EXTRA SMALL (320px+) ========== */
+/* Dispositivos muito pequenos - smartphones antigos */
+
+@media (min-width: 320px) {
+  .container {
+    max-width: 320px;
+    padding-left: var(--spacing-3);
+    padding-right: var(--spacing-3);
+  }
+  
+  .container-fluid {
+    padding-left: var(--spacing-3);
+    padding-right: var(--spacing-3);
+  }
+  
+  /* Typography para mobile extra small */
+  h1 { font-size: var(--font-size-2xl); line-height: var(--line-height-tight); }
+  h2 { font-size: var(--font-size-xl); line-height: var(--line-height-tight); }
+  h3 { font-size: var(--font-size-lg); line-height: var(--line-height-snug); }
+  h4 { font-size: var(--font-size-base); line-height: var(--line-height-snug); }
+  h5 { font-size: var(--font-size-sm); line-height: var(--line-height-snug); }
+  h6 { font-size: var(--font-size-xs); line-height: var(--line-height-snug); }
+  
+  p { font-size: var(--font-size-sm); line-height: var(--line-height-relaxed); }
+  
+  /* Utility classes para XS */
+  .xs\:hidden { display: none !important; }
+  .xs\:block { display: block !important; }
+  .xs\:flex { display: flex !important; }
+  .xs\:grid { display: grid !important; }
+  .xs\:text-center { text-align: center !important; }
+  .xs\:text-left { text-align: left !important; }
+  .xs\:p-2 { padding: var(--spacing-2) !important; }
+  .xs\:p-3 { padding: var(--spacing-3) !important; }
+  .xs\:m-2 { margin: var(--spacing-2) !important; }
+  .xs\:w-full { width: 100% !important; }
+}
+
+/* ========== BREAKPOINT 2: MOBILE SMALL (640px+) ========== */
+/* Smartphones modernos */
+
+@media (min-width: 640px) {
+  .container {
+    max-width: 640px;
+    padding-left: var(--spacing-4);
+    padding-right: var(--spacing-4);
+  }
+  
+  .container-fluid {
+    padding-left: var(--spacing-4);
+    padding-right: var(--spacing-4);
+  }
+  
+  /* Typography para mobile small */
+  h1 { font-size: var(--font-size-3xl); }
+  h2 { font-size: var(--font-size-2xl); }
+  h3 { font-size: var(--font-size-xl); }
+  h4 { font-size: var(--font-size-lg); }
+  p { font-size: var(--font-size-base); }
+  
+  /* Utility classes para SM */
+  .sm\:hidden { display: none !important; }
+  .sm\:block { display: block !important; }
+  .sm\:flex { display: flex !important; }
+  .sm\:grid { display: grid !important; }
+  .sm\:text-center { text-align: center !important; }
+  .sm\:text-left { text-align: left !important; }
+  .sm\:text-right { text-align: right !important; }
+  .sm\:p-4 { padding: var(--spacing-4) !important; }
+  .sm\:p-6 { padding: var(--spacing-6) !important; }
+  .sm\:m-4 { margin: var(--spacing-4) !important; }
+  .sm\:w-1\/2 { width: 50% !important; }
+  .sm\:w-full { width: 100% !important; }
+  
+  /* Grid System para SM */
+  .sm\:grid-cols-1 { grid-template-columns: repeat(1, minmax(0, 1fr)) !important; }
+  .sm\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+  .sm\:flex-row { flex-direction: row !important; }
+  .sm\:flex-col { flex-direction: column !important; }
+}
+
+/* ========== BREAKPOINT 3: TABLET (768px+) ========== */
+/* Tablets e dispositivos médios */
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+    padding-left: var(--spacing-6);
+    padding-right: var(--spacing-6);
+  }
+  
+  .container-fluid {
+    padding-left: var(--spacing-6);
+    padding-right: var(--spacing-6);
+  }
+  
+  /* Typography para tablet */
+  h1 { font-size: var(--font-size-4xl); }
+  h2 { font-size: var(--font-size-3xl); }
+  h3 { font-size: var(--font-size-2xl); }
+  h4 { font-size: var(--font-size-xl); }
+  p { font-size: var(--font-size-base); line-height: var(--line-height-relaxed); }
+  
+  /* Utility classes para MD */
+  .md\:hidden { display: none !important; }
+  .md\:block { display: block !important; }
+  .md\:flex { display: flex !important; }
+  .md\:grid { display: grid !important; }
+  .md\:text-center { text-align: center !important; }
+  .md\:text-left { text-align: left !important; }
+  .md\:text-right { text-align: right !important; }
+  .md\:p-6 { padding: var(--spacing-6) !important; }
+  .md\:p-8 { padding: var(--spacing-8) !important; }
+  .md\:m-6 { margin: var(--spacing-6) !important; }
+  .md\:w-1\/3 { width: 33.333333% !important; }
+  .md\:w-2\/3 { width: 66.666667% !important; }
+  .md\:w-1\/2 { width: 50% !important; }
+  .md\:w-full { width: 100% !important; }
+  
+  /* Grid System para MD */
+  .md\:grid-cols-1 { grid-template-columns: repeat(1, minmax(0, 1fr)) !important; }
+  .md\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+  .md\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; }
+  .md\:grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)) !important; }
+  .md\:flex-row { flex-direction: row !important; }
+  .md\:flex-col { flex-direction: column !important; }
+  .md\:justify-start { justify-content: flex-start !important; }
+  .md\:justify-center { justify-content: center !important; }
+  .md\:justify-between { justify-content: space-between !important; }
+  .md\:items-start { align-items: flex-start !important; }
+  .md\:items-center { align-items: center !important; }
+}
+
+/* ========== BREAKPOINT 4: DESKTOP (1024px+) ========== */
+/* Laptops e desktops */
+
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1024px;
+    padding-left: var(--spacing-8);
+    padding-right: var(--spacing-8);
+  }
+  
+  .container-fluid {
+    padding-left: var(--spacing-8);
+    padding-right: var(--spacing-8);
+  }
+  
+  /* Typography para desktop */
+  h1 { font-size: var(--font-size-5xl); }
+  h2 { font-size: var(--font-size-4xl); }
+  h3 { font-size: var(--font-size-3xl); }
+  h4 { font-size: var(--font-size-2xl); }
+  h5 { font-size: var(--font-size-xl); }
+  p { font-size: var(--font-size-lg); }
+  
+  /* Utility classes para LG */
+  .lg\:hidden { display: none !important; }
+  .lg\:block { display: block !important; }
+  .lg\:flex { display: flex !important; }
+  .lg\:grid { display: grid !important; }
+  .lg\:text-center { text-align: center !important; }
+  .lg\:text-left { text-align: left !important; }
+  .lg\:text-right { text-align: right !important; }
+  .lg\:p-8 { padding: var(--spacing-8) !important; }
+  .lg\:p-10 { padding: var(--spacing-10) !important; }
+  .lg\:p-12 { padding: var(--spacing-12) !important; }
+  .lg\:m-8 { margin: var(--spacing-8) !important; }
+  .lg\:w-1\/4 { width: 25% !important; }
+  .lg\:w-1\/3 { width: 33.333333% !important; }
+  .lg\:w-1\/2 { width: 50% !important; }
+  .lg\:w-2\/3 { width: 66.666667% !important; }
+  .lg\:w-3\/4 { width: 75% !important; }
+  .lg\:w-full { width: 100% !important; }
+  
+  /* Grid System para LG */
+  .lg\:grid-cols-1 { grid-template-columns: repeat(1, minmax(0, 1fr)) !important; }
+  .lg\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+  .lg\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; }
+  .lg\:grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)) !important; }
+  .lg\:grid-cols-5 { grid-template-columns: repeat(5, minmax(0, 1fr)) !important; }
+  .lg\:grid-cols-6 { grid-template-columns: repeat(6, minmax(0, 1fr)) !important; }
+  .lg\:flex-row { flex-direction: row !important; }
+  .lg\:flex-col { flex-direction: column !important; }
+  .lg\:justify-start { justify-content: flex-start !important; }
+  .lg\:justify-center { justify-content: center !important; }
+  .lg\:justify-between { justify-content: space-between !important; }
+  .lg\:justify-around { justify-content: space-around !important; }
+  .lg\:items-start { align-items: flex-start !important; }
+  .lg\:items-center { align-items: center !important; }
+  .lg\:items-end { align-items: flex-end !important; }
+}
+
+/* ========== BREAKPOINT 5: DESKTOP LARGE (1280px+) ========== */
+/* Desktops grandes */
+
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+    padding-left: var(--spacing-10);
+    padding-right: var(--spacing-10);
+  }
+  
+  .container-fluid {
+    padding-left: var(--spacing-10);
+    padding-right: var(--spacing-10);
+  }
+  
+  /* Typography para desktop large */
+  h1 { font-size: var(--font-size-6xl); }
+  h2 { font-size: var(--font-size-5xl); }
+  h3 { font-size: var(--font-size-4xl); }
+  h4 { font-size: var(--font-size-3xl); }
+  h5 { font-size: var(--font-size-2xl); }
+  h6 { font-size: var(--font-size-xl); }
+  p { font-size: var(--font-size-lg); }
+  
+  /* Utility classes para XL */
+  .xl\:hidden { display: none !important; }
+  .xl\:block { display: block !important; }
+  .xl\:flex { display: flex !important; }
+  .xl\:grid { display: grid !important; }
+  .xl\:text-center { text-align: center !important; }
+  .xl\:text-left { text-align: left !important; }
+  .xl\:text-right { text-align: right !important; }
+  .xl\:p-10 { padding: var(--spacing-10) !important; }
+  .xl\:p-12 { padding: var(--spacing-12) !important; }
+  .xl\:p-16 { padding: var(--spacing-16) !important; }
+  .xl\:m-10 { margin: var(--spacing-10) !important; }
+  .xl\:m-12 { margin: var(--spacing-12) !important; }
+  
+  /* Grid System para XL */
+  .xl\:grid-cols-1 { grid-template-columns: repeat(1, minmax(0, 1fr)) !important; }
+  .xl\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+  .xl\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; }
+  .xl\:grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)) !important; }
+  .xl\:grid-cols-5 { grid-template-columns: repeat(5, minmax(0, 1fr)) !important; }
+  .xl\:grid-cols-6 { grid-template-columns: repeat(6, minmax(0, 1fr)) !important; }
+  .xl\:grid-cols-8 { grid-template-columns: repeat(8, minmax(0, 1fr)) !important; }
+  .xl\:grid-cols-12 { grid-template-columns: repeat(12, minmax(0, 1fr)) !important; }
+}
+
+/* ========== BREAKPOINT 6: ULTRA-WIDE (1536px+) ========== */
+/* Monitores ultra-wide e displays 4K */
+
+@media (min-width: 1536px) {
+  .container {
+    max-width: 1536px;
+    padding-left: var(--spacing-12);
+    padding-right: var(--spacing-12);
+  }
+  
+  .container-fluid {
+    padding-left: var(--spacing-12);
+    padding-right: var(--spacing-12);
+  }
+  
+  /* Typography para ultra-wide */
+  h1 { font-size: var(--font-size-7xl); }
+  h2 { font-size: var(--font-size-6xl); }
+  h3 { font-size: var(--font-size-5xl); }
+  h4 { font-size: var(--font-size-4xl); }
+  h5 { font-size: var(--font-size-3xl); }
+  h6 { font-size: var(--font-size-2xl); }
+  p { font-size: var(--font-size-xl); }
+  
+  /* Utility classes para 2XL */
+  .\32 xl\:hidden { display: none !important; }
+  .\32 xl\:block { display: block !important; }
+  .\32 xl\:flex { display: flex !important; }
+  .\32 xl\:grid { display: grid !important; }
+  .\32 xl\:text-center { text-align: center !important; }
+  .\32 xl\:text-left { text-align: left !important; }
+  .\32 xl\:text-right { text-align: right !important; }
+  .\32 xl\:p-12 { padding: var(--spacing-12) !important; }
+  .\32 xl\:p-16 { padding: var(--spacing-16) !important; }
+  .\32 xl\:p-20 { padding: var(--spacing-20) !important; }
+  .\32 xl\:m-12 { margin: var(--spacing-12) !important; }
+  .\32 xl\:m-16 { margin: var(--spacing-16) !important; }
+  
+  /* Grid System para 2XL */
+  .\32 xl\:grid-cols-1 { grid-template-columns: repeat(1, minmax(0, 1fr)) !important; }
+  .\32 xl\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+  .\32 xl\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; }
+  .\32 xl\:grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)) !important; }
+  .\32 xl\:grid-cols-5 { grid-template-columns: repeat(5, minmax(0, 1fr)) !important; }
+  .\32 xl\:grid-cols-6 { grid-template-columns: repeat(6, minmax(0, 1fr)) !important; }
+  .\32 xl\:grid-cols-8 { grid-template-columns: repeat(8, minmax(0, 1fr)) !important; }
+  .\32 xl\:grid-cols-12 { grid-template-columns: repeat(12, minmax(0, 1fr)) !important; }
+  .\32 xl\:grid-cols-16 { grid-template-columns: repeat(16, minmax(0, 1fr)) !important; }
+}
+
+/* ========== SISTEMA DE GRID AVANÇADO ========== */
+
+.grid {
+  display: grid;
+}
+
+.grid-container {
+  display: grid;
+  gap: var(--spacing-4);
+  width: 100%;
+}
+
+.grid-responsive {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-4);
+}
+
+.grid-auto-fill {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: var(--spacing-4);
+}
+
+.grid-masonry {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-auto-rows: masonry;
+  gap: var(--spacing-4);
+}
+
+/* ========== FLEXBOX UTILITIES ========== */
+
+.flex {
+  display: flex;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-nowrap {
+  flex-wrap: nowrap;
+}
+
+.justify-start { justify-content: flex-start; }
+.justify-end { justify-content: flex-end; }
+.justify-center { justify-content: center; }
+.justify-between { justify-content: space-between; }
+.justify-around { justify-content: space-around; }
+.justify-evenly { justify-content: space-evenly; }
+
+.items-start { align-items: flex-start; }
+.items-end { align-items: flex-end; }
+.items-center { align-items: center; }
+.items-baseline { align-items: baseline; }
+.items-stretch { align-items: stretch; }
+
+.flex-col { flex-direction: column; }
+.flex-row { flex-direction: row; }
+.flex-col-reverse { flex-direction: column-reverse; }
+.flex-row-reverse { flex-direction: row-reverse; }
+
+/* ========== SPACING UTILITIES ========== */
+
+.gap-1 { gap: var(--spacing-1); }
+.gap-2 { gap: var(--spacing-2); }
+.gap-3 { gap: var(--spacing-3); }
+.gap-4 { gap: var(--spacing-4); }
+.gap-5 { gap: var(--spacing-5); }
+.gap-6 { gap: var(--spacing-6); }
+.gap-8 { gap: var(--spacing-8); }
+.gap-10 { gap: var(--spacing-10); }
+.gap-12 { gap: var(--spacing-12); }
+
+/* ========== VISIBILITY UTILITIES ========== */
+
+.hidden { display: none !important; }
+.block { display: block !important; }
+.inline { display: inline !important; }
+.inline-block { display: inline-block !important; }
+.flex { display: flex !important; }
+.inline-flex { display: inline-flex !important; }
+.grid { display: grid !important; }
+.inline-grid { display: inline-grid !important; }
+
+.visible { visibility: visible !important; }
+.invisible { visibility: hidden !important; }
+
+.opacity-0 { opacity: 0 !important; }
+.opacity-25 { opacity: 0.25 !important; }
+.opacity-50 { opacity: 0.5 !important; }
+.opacity-75 { opacity: 0.75 !important; }
+.opacity-100 { opacity: 1 !important; }
+
+/* ========== OVERFLOW UTILITIES ========== */
+
+.overflow-auto { overflow: auto; }
+.overflow-hidden { overflow: hidden; }
+.overflow-visible { overflow: visible; }
+.overflow-scroll { overflow: scroll; }
+
+.overflow-x-auto { overflow-x: auto; }
+.overflow-x-hidden { overflow-x: hidden; }
+.overflow-x-scroll { overflow-x: scroll; }
+
+.overflow-y-auto { overflow-y: auto; }
+.overflow-y-hidden { overflow-y: hidden; }
+.overflow-y-scroll { overflow-y: scroll; }
+
+/* ========== POSITION UTILITIES ========== */
+
+.static { position: static !important; }
+.fixed { position: fixed !important; }
+.absolute { position: absolute !important; }
+.relative { position: relative !important; }
+.sticky { position: sticky !important; }
+
+.top-0 { top: 0 !important; }
+.right-0 { right: 0 !important; }
+.bottom-0 { bottom: 0 !important; }
+.left-0 { left: 0 !important; }
+
+.inset-0 { 
+  top: 0 !important; 
+  right: 0 !important; 
+  bottom: 0 !important; 
+  left: 0 !important; 
+}
+
+/* ========== WIDTH E HEIGHT UTILITIES ========== */
+
+.w-auto { width: auto !important; }
+.w-full { width: 100% !important; }
+.w-screen { width: 100vw !important; }
+.w-fit { width: fit-content !important; }
+
+.h-auto { height: auto !important; }
+.h-full { height: 100% !important; }
+.h-screen { height: 100vh !important; }
+.h-fit { height: fit-content !important; }
+
+.min-w-0 { min-width: 0 !important; }
+.min-w-full { min-width: 100% !important; }
+.min-w-fit { min-width: fit-content !important; }
+
+.min-h-0 { min-height: 0 !important; }
+.min-h-full { min-height: 100% !important; }
+.min-h-screen { min-height: 100vh !important; }
+.min-h-fit { min-height: fit-content !important; }
+
+.max-w-none { max-width: none !important; }
+.max-w-full { max-width: 100% !important; }
+.max-w-fit { max-width: fit-content !important; }
+
+.max-h-none { max-height: none !important; }
+.max-h-full { max-height: 100% !important; }
+.max-h-screen { max-height: 100vh !important; }
+.max-h-fit { max-height: fit-content !important; }

@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design System - Exemplos Práticos | Atividade 2</title>
+    
+    <!-- CSS do Design System -->
+    <link rel="stylesheet" href="assets/css/design-system.css">
+    
+    <style>
+        /* Estilos específicos para a página de demonstração */
+        .demo-section {
+            margin-bottom: var(--spacing-12);
+            padding: var(--spacing-6);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            background: var(--color-surface);
+        }
+        
+        .demo-title {
+            color: var(--color-primary-600);
+            margin-bottom: var(--spacing-4);
+            font-size: var(--text-2xl);
+            font-weight: 600;
+        }
+        
+        .demo-description {
+            color: var(--color-text-secondary);
+            margin-bottom: var(--spacing-6);
+            font-size: var(--text-base);
+        }
+        
+        .code-example {
+            background: var(--color-gray-50);
+            border: 1px solid var(--color-gray-200);
+            border-radius: var(--radius-base);
+            padding: var(--spacing-4);
+            margin: var(--spacing-4) 0;
+            font-family: var(--font-mono);
+            font-size: var(--text-sm);
+            overflow-x: auto;
+        }
+        
+        .demo-grid {
+            margin: var(--spacing-6) 0;
+        }
+        
+        .demo-item {
+            background: var(--color-primary-100);
+            border: 1px solid var(--color-primary-200);
+            border-radius: var(--radius-base);
+            padding: var(--spacing-4);
+            text-align: center;
+            font-weight: 500;
+            color: var(--color-primary-700);
+        }
+        
+        .hero-demo {
+            background: linear-gradient(135deg, var(--color-primary-500), var(--color-secondary-500));
+            color: white;
+            text-align: center;
+            padding: var(--spacing-20) var(--spacing-6);
+            border-radius: var(--radius-xl);
+            margin-bottom: var(--spacing-12);
+        }
+        
+        .nav-demo {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: var(--color-surface);
+            border-bottom: 1px solid var(--color-border);
+            margin-bottom: var(--spacing-8);
+        }
+    </style>
+</head>
+<body>
+    <!-- ========== HERO SECTION ========== -->
+    <section class="hero-demo animate-fade-in">
+        <div class="container">
+            <h1 class="text-4xl font-bold mb-4">🎨 Design System Avançado</h1>
+            <p class="text-xl opacity-90 mb-8">Demonstração prática dos componentes CSS3 - Atividade 2</p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <button class="btn btn-secondary btn-lg hover-lift">Ver Componentes</button>
+                <button class="btn btn-outline btn-lg hover-glow">Documentação</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== NAVEGAÇÃO DE DEMONSTRAÇÃO ========== -->
+    <nav class="nav-demo">
+        <div class="container">
+            <div class="breadcrumb">
+                <ol class="breadcrumb-list">
+                    <li class="breadcrumb-item">
+                        <a href="#" class="breadcrumb-link">Home</a>
+                    </li>
+                    <li class="breadcrumb-item">
+                        <a href="#" class="breadcrumb-link">Design System</a>
+                    </li>
+                    <li class="breadcrumb-item active">
+                        <span class="breadcrumb-current">Exemplos</span>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container py-8">
+        
+        <!-- ========== SISTEMA DE GRID ========== -->
+        <section class="demo-section">
+            <h2 class="demo-title">📐 Sistema de Grid Avançado</h2>
+            <p class="demo-description">
+                Demonstração do sistema de grid responsivo com CSS Grid e Flexbox, 
+                incluindo layouts automáticos e masonry.
+            </p>
+            
+            <!-- Grid Básico -->
+            <h3 class="text-xl font-semibold mb-4">Grid Responsivo Básico</h3>
+            <div class="code-example">
+&lt;div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"&gt;
+</div>
+            
+            <div class="demo-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="demo-item">Item 1</div>
+                <div class="demo-item">Item 2</div>
+                <div class="demo-item">Item 3</div>
+                <div class="demo-item">Item 4</div>
+                <div class="demo-item">Item 5</div>
+                <div class="demo-item">Item 6</div>
+            </div>
+            
+            <!-- Auto Grid -->
+            <h3 class="text-xl font-semibold mb-4 mt-8">Auto Grid (Dinâmico)</h3>
+            <div class="code-example">
+&lt;div class="auto-grid" style="--min-column-width: 200px;"&gt;
+</div>
+            
+            <div class="demo-grid auto-grid" style="--min-column-width: 200px;">
+                <div class="demo-item">Auto 1</div>
+                <div class="demo-item">Auto 2</div>
+                <div class="demo-item">Auto 3</div>
+                <div class="demo-item">Auto 4</div>
+                <div class="demo-item">Auto 5</div>
+            </div>
+            
+            <!-- Grid com Span -->
+            <h3 class="text-xl font-semibold mb-4 mt-8">Grid com Column Span</h3>
+            <div class="code-example">
+&lt;div class="grid grid-cols-4 gap-4"&gt;
+    &lt;div class="col-span-2"&gt;Span 2&lt;/div&gt;
+    &lt;div class="col-span-1"&gt;Span 1&lt;/div&gt;
+&lt;/div&gt;
+</div>
+            
+            <div class="demo-grid grid grid-cols-4 gap-4">
+                <div class="demo-item col-span-2">Span 2 colunas</div>
+                <div class="demo-item">Normal</div>
+                <div class="demo-item">Normal</div>
+                <div class="demo-item col-span-3">Span 3 colunas</div>
+                <div class="demo-item">Normal</div>
+            </div>
+        </section>
+
+        <!-- ========== COMPONENTES DE FEEDBACK ========== -->
+        <section class="demo-section">
+            <h2 class="demo-title">💬 Componentes de Feedback</h2>
+            <p class="demo-description">
+                Sistema completo de notificações, alerts, toasts e modais com animações CSS3.
+            </p>
+            
+            <!-- Alerts -->
+            <h3 class="text-xl font-semibold mb-4">Alerts</h3>
+            <div class="space-y-4">
+                <div class="alert alert-success">
+                    <span class="alert-icon">✅</span>
+                    <div class="alert-content">
+                        <h4 class="alert-title">Sucesso!</h4>
+                        <p class="alert-message">Operação realizada com sucesso.</p>
+                    </div>
+                    <button class="alert-close">&times;</button>
+                </div>
+                
+                <div class="alert alert-warning">
+                    <span class="alert-icon">⚠️</span>
+                    <div class="alert-content">
+                        <h4 class="alert-title">Atenção!</h4>
+                        <p class="alert-message">Verifique os dados antes de continuar.</p>
+                    </div>
+                </div>
+                
+                <div class="alert alert-error">
+                    <span class="alert-icon">❌</span>
+                    <div class="alert-content">
+                        <h4 class="alert-title">Erro!</h4>
+                        <p class="alert-message">Algo deu errado. Tente novamente.</p>
+                    </div>
+                </div>
+                
+                <div class="alert alert-info">
+                    <span class="alert-icon">ℹ️</span>
+                    <div class="alert-content">
+                        <h4 class="alert-title">Informação</h4>
+                        <p class="alert-message">Esta é uma mensagem informativa.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Botões para Toasts -->
+            <h3 class="text-xl font-semibold mb-4 mt-8">Toasts (JavaScript)</h3>
+            <div class="flex flex-wrap gap-4">
+                <button class="btn btn-success" onclick="showToast('Operação bem-sucedida!', 'success')">
+                    Toast Sucesso
+                </button>
+                <button class="btn btn-warning" onclick="showToast('Atenção necessária!', 'warning')">
+                    Toast Warning
+                </button>
+                <button class="btn btn-error" onclick="showToast('Erro encontrado!', 'error')">
+                    Toast Erro
+                </button>
+                <button class="btn btn-info" onclick="showToast('Informação importante!', 'info')">
+                    Toast Info
+                </button>
+            </div>
+            
+            <!-- Modal Demo -->
+            <h3 class="text-xl font-semibold mb-4 mt-8">Modal</h3>
+            <button class="btn btn-primary" onclick="openModal('demoModal')">
+                Abrir Modal de Demonstração
+            </button>
+        </section>
+
+        <!-- ========== FORMULÁRIOS ========== -->
+        <section class="demo-section">
+            <h2 class="demo-title">📝 Formulários Avançados</h2>
+            <p class="demo-description">
+                Formulários com floating labels, validação visual e componentes customizados.
+            </p>
+            
+            <form class="max-w-md space-y-6">
+                <!-- Input com Floating Label -->
+                <div class="form-group">
+                    <input type="text" id="nome" class="form-input" placeholder=" " required>
+                    <label for="nome" class="form-label">Nome completo</label>
+                    <div class="form-error">Este campo é obrigatório</div>
+                    <div class="form-help">Digite seu nome completo</div>
+                </div>
+                
+                <!-- Email -->
+                <div class="form-group">
+                    <input type="email" id="email" class="form-input" placeholder=" " required>
+                    <label for="email" class="form-label">E-mail</label>
+                    <div class="form-error">Digite um e-mail válido</div>
+                </div>
+                
+                <!-- Select Customizado -->
+                <div class="form-group">
+                    <div class="custom-select">
+                        <select class="form-select" required>
+                            <option value="">Selecione...</option>
+                            <option value="opcao1">Opção 1</option>
+                            <option value="opcao2">Opção 2</option>
+                            <option value="opcao3">Opção 3</option>
+                        </select>
+                        <label class="form-label">Categoria</label>
+                    </div>
+                </div>
+                
+                <!-- Textarea -->
+                <div class="form-group">
+                    <textarea id="mensagem" class="form-textarea" placeholder=" " rows="4"></textarea>
+                    <label for="mensagem" class="form-label">Mensagem</label>
+                </div>
+                
+                <!-- Checkbox -->
+                <div class="form-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" class="checkbox-input">
+                        <span class="checkbox-custom"></span>
+                        <span class="checkbox-text">Aceito os termos e condições</span>
+                    </label>
+                </div>
+                
+                <!-- Radio -->
+                <div class="form-group">
+                    <fieldset>
+                        <legend class="form-legend">Preferência de contato</legend>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="contato" value="email" class="radio-input">
+                                <span class="radio-custom"></span>
+                                <span class="radio-text">E-mail</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="contato" value="telefone" class="radio-input">
+                                <span class="radio-custom"></span>
+                                <span class="radio-text">Telefone</span>
+                            </label>
+                        </div>
+                    </fieldset>
+                </div>
+                
+                <!-- Botões -->
+                <div class="flex gap-4">
+                    <button type="submit" class="btn btn-primary flex-1">
+                        Enviar Formulário
+                    </button>
+                    <button type="reset" class="btn btn-secondary">
+                        Limpar
+                    </button>
+                </div>
+            </form>
+        </section>
+
+        <!-- ========== CARDS E COMPONENTES ========== -->
+        <section class="demo-section">
+            <h2 class="demo-title">🎴 Cards e Componentes</h2>
+            <p class="demo-description">
+                Variedade de cards e componentes visuais com diferentes estilos e funcionalidades.
+            </p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Card Básico -->
+                <div class="card hover-lift">
+                    <div class="card-header">
+                        <h3 class="card-title">Card Básico</h3>
+                        <span class="card-subtitle">Subtítulo do card</span>
+                    </div>
+                    <div class="card-body">
+                        <p>Este é um exemplo de card básico com header, body e footer.</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary btn-sm">Ação</button>
+                        <button class="btn btn-outline btn-sm">Secundária</button>
+                    </div>
+                </div>
+                
+                <!-- Card com Badge -->
+                <div class="card hover-glow">
+                    <div class="card-header">
+                        <div class="flex items-center justify-between">
+                            <h3 class="card-title">Card com Badge</h3>
+                            <span class="badge badge-success">Novo</span>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <p>Card demonstrando o uso de badges para destacar informações.</p>
+                        <div class="flex gap-2 mt-4">
+                            <span class="badge badge-primary">CSS3</span>
+                            <span class="badge badge-secondary">JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Card de Estatística -->
+                <div class="card stats-card">
+                    <div class="card-body text-center">
+                        <div class="stats-icon">📊</div>
+                        <div class="stats-number">1,234</div>
+                        <div class="stats-label">Usuários Ativos</div>
+                        <div class="stats-change positive">+12% este mês</div>
+                    </div>
+                </div>
+                
+                <!-- Card com Avatar -->
+                <div class="card">
+                    <div class="card-body">
+                        <div class="flex items-center gap-4">
+                            <div class="avatar avatar-lg">
+                                <img src="https://via.placeholder.com/80x80/4f46e5/ffffff?text=JD" alt="João">
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold">João Desenvolvedor</h4>
+                                <p class="text-gray-600">Frontend Developer</p>
+                                <div class="flex gap-2 mt-2">
+                                    <span class="badge badge-outline">React</span>
+                                    <span class="badge badge-outline">CSS3</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Card com Progress -->
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Progresso do Projeto</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="progress-item">
+                            <div class="flex justify-between mb-2">
+                                <span>Design System</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 85%;"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="progress-item mt-4">
+                            <div class="flex justify-between mb-2">
+                                <span>Implementação</span>
+                                <span>60%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill bg-warning" style="width: 60%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Card com Timeline -->
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Timeline</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-marker bg-success"></div>
+                                <div class="timeline-content">
+                                    <div class="timeline-title">Projeto iniciado</div>
+                                    <div class="timeline-time">2 horas atrás</div>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-marker bg-info"></div>
+                                <div class="timeline-content">
+                                    <div class="timeline-title">Design aprovado</div>
+                                    <div class="timeline-time">1 hora atrás</div>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-marker bg-warning"></div>
+                                <div class="timeline-content">
+                                    <div class="timeline-title">Em desenvolvimento</div>
+                                    <div class="timeline-time">Agora</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== ANIMAÇÕES ========== -->
+        <section class="demo-section">
+            <h2 class="demo-title">✨ Animações e Micro-interações</h2>
+            <p class="demo-description">
+                Demonstração das animações CSS3 e efeitos de hover implementados no sistema.
+            </p>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="demo-item animate-fade-in">Fade In</div>
+                <div class="demo-item animate-slide-in-left">Slide Left</div>
+                <div class="demo-item animate-slide-in-right">Slide Right</div>
+                <div class="demo-item animate-slide-in-up">Slide Up</div>
+                <div class="demo-item animate-scale-in">Scale In</div>
+                <div class="demo-item animate-bounce-in">Bounce In</div>
+                <div class="demo-item animate-rotate-in">Rotate In</div>
+                <div class="demo-item animate-flip-in">Flip In</div>
+            </div>
+            
+            <h3 class="text-xl font-semibold mb-4 mt-8">Hover Effects</h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="demo-item hover-lift">Hover Lift</div>
+                <div class="demo-item hover-glow">Hover Glow</div>
+                <div class="demo-item hover-shake">Hover Shake</div>
+                <div class="demo-item hover-pulse">Hover Pulse</div>
+            </div>
+            
+            <h3 class="text-xl font-semibold mb-4 mt-8">Loading States</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Loading Spinner</h4>
+                    </div>
+                    <div class="card-body text-center">
+                        <div class="loading-spinner mx-auto"></div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Skeleton Loading</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="skeleton">
+                            <div class="skeleton-line"></div>
+                            <div class="skeleton-line short"></div>
+                            <div class="skeleton-line"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Dots Loading</h4>
+                    </div>
+                    <div class="card-body text-center">
+                        <div class="loading-dots">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== LAYOUT PATTERNS ========== -->
+        <section class="demo-section">
+            <h2 class="demo-title">🏗️ Padrões de Layout</h2>
+            <p class="demo-description">
+                Diferentes padrões de layout implementados com CSS Grid e Flexbox.
+            </p>
+            
+            <!-- Stack Layout -->
+            <h3 class="text-xl font-semibold mb-4">Stack Layout</h3>
+            <div class="card mb-6">
+                <div class="card-body">
+                    <div class="stack">
+                        <div class="demo-item">Item 1</div>
+                        <div class="demo-item">Item 2</div>
+                        <div class="demo-item">Item 3</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Cluster Layout -->
+            <h3 class="text-xl font-semibold mb-4">Cluster Layout</h3>
+            <div class="card mb-6">
+                <div class="card-body">
+                    <div class="cluster">
+                        <span class="badge badge-primary">Tag 1</span>
+                        <span class="badge badge-secondary">Tag 2</span>
+                        <span class="badge badge-success">Tag 3</span>
+                        <span class="badge badge-warning">Tag 4</span>
+                        <span class="badge badge-error">Tag 5</span>
+                        <span class="badge badge-info">Tag 6</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Sidebar Layout -->
+            <h3 class="text-xl font-semibold mb-4">Sidebar Layout</h3>
+            <div class="card">
+                <div class="card-body">
+                    <div class="sidebar-layout">
+                        <div class="demo-item">Conteúdo Principal (Flexível)</div>
+                        <div class="demo-item">Sidebar (300px)</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ========== MODAL DE DEMONSTRAÇÃO ========== -->
+    <div class="modal" id="demoModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-container animate-scale-in">
+            <div class="modal-header">
+                <h3 class="modal-title">Modal de Demonstração</h3>
+                <button class="modal-close" onclick="closeModal('demoModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Este é um modal de demonstração do sistema de design.</p>
+                <p>Ele inclui animações CSS3 e funcionalidade JavaScript para uma experiência moderna.</p>
+                
+                <div class="mt-6">
+                    <h4 class="text-lg font-semibold mb-3">Recursos do Modal:</h4>
+                    <ul class="space-y-2">
+                        <li>✅ Animações de entrada e saída</li>
+                        <li>✅ Overlay com efeito blur</li>
+                        <li>✅ Fechamento por ESC ou clique fora</li>
+                        <li>✅ Foco automático e acessibilidade</li>
+                        <li>✅ Responsivo para todos os dispositivos</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeModal('demoModal')">Fechar</button>
+                <button class="btn btn-primary">Confirmar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== TOAST CONTAINER ========== -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- JavaScript do Design System -->
+    <script src="assets/js/design-system.js"></script>
+    
+    <script>
+        // Funcionalidades específicas da página de demonstração
+        
+        // Função para mostrar toast
+        function showToast(message, type = 'info') {
+            if (window.feedbackSystem) {
+                window.feedbackSystem.showToast(message, type);
+            } else {
+                console.log(`Toast ${type}: ${message}`);
+            }
+        }
+        
+        // Função para abrir modal
+        function openModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.classList.add('active');
+                document.body.classList.add('modal-open');
+                
+                // Foco no primeiro elemento focalizável
+                const focusable = modal.querySelector('button, input, textarea, select');
+                if (focusable) {
+                    setTimeout(() => focusable.focus(), 100);
+                }
+            }
+        }
+        
+        // Função para fechar modal
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.classList.remove('active');
+                document.body.classList.remove('modal-open');
+            }
+        }
+        
+        // Event listeners para modais
+        document.addEventListener('click', (e) => {
+            if (e.target.classList.contains('modal-overlay')) {
+                const modal = e.target.closest('.modal');
+                if (modal) {
+                    modal.classList.remove('active');
+                    document.body.classList.remove('modal-open');
+                }
+            }
+        });
+        
+        // Fechar modal com ESC
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                const activeModal = document.querySelector('.modal.active');
+                if (activeModal) {
+                    activeModal.classList.remove('active');
+                    document.body.classList.remove('modal-open');
+                }
+            }
+        });
+        
+        // Animações de entrada para elementos visíveis
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        // Observar seções para animação
+        document.querySelectorAll('.demo-section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(20px)';
+            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(section);
+        });
+        
+        // Log de inicialização
+        console.log('🎨 Design System Demo carregado com sucesso!');
+        console.log('📚 Componentes disponíveis:', Object.keys(window).filter(key => key.includes('System')));
+    </script>
+</body>
+</html>

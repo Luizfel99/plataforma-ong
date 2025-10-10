@@ -1,0 +1,228 @@
+{
+  "name": "Plataforma ONG - Transformando Vidas",
+  "short_name": "Plataforma ONG",
+  "description": "Portal oficial da nossa ONG dedicada a transformar vidas através de projetos sociais, educação e sustentabilidade.",
+  "version": "1.0.0",
+  "lang": "pt-BR",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "theme_color": "#005fcc",
+  "background_color": "#ffffff",
+  "orientation": "portrait-primary",
+  "dir": "ltr",
+  
+  "icons": [
+    {
+      "src": "/assets/img/icons/icon-72.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/img/icons/icon-96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/img/icons/icon-128.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/img/icons/icon-144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/img/icons/icon-152.png",
+      "sizes": "152x152",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/img/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/img/icons/icon-384.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/img/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/img/icons/icon-192-maskable.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/assets/img/icons/icon-512-maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  
+  "screenshots": [
+    {
+      "src": "/assets/img/screenshots/desktop-home.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "platform": "wide",
+      "label": "Página inicial no desktop"
+    },
+    {
+      "src": "/assets/img/screenshots/mobile-home.png",
+      "sizes": "375x667",
+      "type": "image/png",
+      "platform": "narrow",
+      "label": "Página inicial no mobile"
+    },
+    {
+      "src": "/assets/img/screenshots/projetos.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "platform": "wide",
+      "label": "Página de projetos"
+    },
+    {
+      "src": "/assets/img/screenshots/doacoes.png",
+      "sizes": "375x667",
+      "type": "image/png",
+      "platform": "narrow",
+      "label": "Sistema de doações"
+    }
+  ],
+  
+  "categories": [
+    "social",
+    "education",
+    "lifestyle",
+    "utilities"
+  ],
+  
+  "shortcuts": [
+    {
+      "name": "Fazer Doação",
+      "short_name": "Doar",
+      "description": "Acesso rápido ao sistema de doações",
+      "url": "/doacoes.html",
+      "icons": [
+        {
+          "src": "/assets/img/icons/donate-96.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Voluntariado",
+      "short_name": "Voluntário",
+      "description": "Cadastre-se como voluntário",
+      "url": "/voluntariado.html",
+      "icons": [
+        {
+          "src": "/assets/img/icons/volunteer-96.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Projetos",
+      "short_name": "Projetos",
+      "description": "Conheça nossos projetos sociais",
+      "url": "/projetos.html",
+      "icons": [
+        {
+          "src": "/assets/img/icons/projects-96.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Contato",
+      "short_name": "Contato",
+      "description": "Entre em contato conosco",
+      "url": "/contato.html",
+      "icons": [
+        {
+          "src": "/assets/img/icons/contact-96.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
+    }
+  ],
+  
+  "share_target": {
+    "action": "/contato.html",
+    "method": "GET",
+    "params": {
+      "title": "subject",
+      "text": "message",
+      "url": "url"
+    }
+  },
+  
+  "protocol_handlers": [
+    {
+      "protocol": "mailto",
+      "url": "/contato.html?email=%s"
+    }
+  ],
+  
+  "prefer_related_applications": false,
+  "related_applications": [
+    {
+      "platform": "play",
+      "url": "https://play.google.com/store/apps/details?id=com.example.plataformaong",
+      "id": "com.example.plataformaong"
+    },
+    {
+      "platform": "itunes",
+      "url": "https://apps.apple.com/app/plataforma-ong/id123456789"
+    }
+  ],
+  
+  "edge_side_panel": {
+    "preferred_width": 400
+  },
+  
+  "launch_handler": {
+    "client_mode": "focus-existing"
+  },
+  
+  "capture_links": "existing-client-navigate",
+  
+  "file_handlers": [
+    {
+      "action": "/contato.html",
+      "accept": {
+        "text/plain": [".txt"],
+        "text/csv": [".csv"],
+        "application/pdf": [".pdf"]
+      },
+      "launch_type": "single-client"
+    }
+  ],
+  
+  "handle_links": "preferred",
+  
+  "id": "plataforma-ong-app",
+  
+  "iarc_rating_id": "e84b072d-71b3-4d3e-86ae-31a8ce4e53b7"
+}

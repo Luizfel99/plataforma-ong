@@ -1,0 +1,43 @@
+{
+  "name": "plataforma-ong-build",
+  "version": "1.0.0",
+  "description": "Sistema de build para otimização da Plataforma ONG",
+  "main": "index.js",
+  "scripts": {
+    "build": "node build/build.js",
+    "minify-css": "node build/minify-css.js",
+    "minify-js": "node build/minify-js.js",
+    "minify-html": "node build/minify-html.js",
+    "optimize-images": "node build/optimize-images.js",
+    "build-production": "npm run minify-css && npm run minify-js && npm run minify-html && npm run optimize-images",
+    "dev": "live-server --port=3000",
+    "lint": "eslint js/**/*.js",
+    "a11y-audit": "node build/accessibility-audit.js",
+    "contrast-check": "node build/contrast-checker.js",
+    "serve": "live-server production --port=8080"
+  },
+  "keywords": [
+    "ong",
+    "accessibility",
+    "build",
+    "optimization"
+  ],
+  "author": "Plataforma ONG Team",
+  "license": "MIT",
+  "devDependencies": {
+    "clean-css": "^5.3.2",
+    "terser": "^5.19.4",
+    "html-minifier-terser": "^7.2.0",
+    "imagemin": "^8.0.1",
+    "imagemin-mozjpeg": "^10.0.0",
+    "imagemin-pngquant": "^9.0.2",
+    "imagemin-svgo": "^10.0.1",
+    "imagemin-webp": "^7.0.0",
+    "live-server": "^1.2.2",
+    "eslint": "^8.50.0",
+    "axe-core": "^4.8.1",
+    "puppeteer": "^21.3.8",
+    "color-contrast-analyzer": "^3.0.0"
+  },
+  "dependencies": {}
+}
