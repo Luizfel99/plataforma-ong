@@ -1,0 +1,15 @@
+﻿{
+    "messages":  [
+                     {
+                         "type":  "error",
+                         "lastLine":  4,
+                         "firstLine":  3,
+                         "lastColumn":  8,
+                         "firstColumn":  17,
+                         "message":  "Element “head” is missing a required instance of child element “title”.",
+                         "extract":  "lang=\"en\"\u003e\n  \u003cbody\u003e\n    \u003c",
+                         "hiliteStart":  10,
+                         "hiliteLength":  9
+                     }
+                 ]
+}

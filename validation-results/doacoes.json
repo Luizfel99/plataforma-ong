@@ -1,5 +1,23 @@
 ﻿{
     "messages":  [
-
+                     {
+                         "type":  "error",
+                         "lastLine":  11,
+                         "lastColumn":  369,
+                         "firstColumn":  3,
+                         "message":  "Bad value  for attribute “href” on element “link”: Illegal character in scheme data: “\u003c” is not allowed.",
+                         "extract":  "ale=1\"\u003e\n  \u003clink rel=\"icon\" href=\u0027data:image/svg+xml;utf8,\u003csvg fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 48 48\"\u003e\u003cpath d=\"m14 7 10-7 10 7v10h5v7h-5l5 24H9l5-24H9v-7h5V7Z\" fill=\"%23F63\"/\u003e\u003cpath d=\"M31.561 24H14l-1.689 8.105L31.561 24ZM18.983 48H9l1.022-4.907L35.723 32.27l1.663 7.98L18.983 48Z\" fill=\"%23FFA385\"/\u003e\u003cpath fill=\"%23FF3\" d=\"M20.5 10h7v7h-7z\"/\u003e\u003c/svg\u003e\u0027\u003e\n  \u003cti",
+                         "hiliteStart":  10,
+                         "hiliteLength":  367
+                     },
+                     {
+                         "type":  "error",
+                         "lastLine":  23,
+                         "lastColumn":  332014,
+                         "message":  "Forbidden code point U+009d.",
+                         "extract":  "pinch to zoomâ€ in order to r",
+                         "hiliteStart":  15,
+                         "hiliteLength":  1
+                     }
                  ]
 }

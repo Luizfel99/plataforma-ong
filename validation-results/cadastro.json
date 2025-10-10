@@ -1,0 +1,22 @@
+﻿{
+    "messages":  [
+                     {
+                         "type":  "error",
+                         "lastLine":  223,
+                         "lastColumn":  18,
+                         "message":  "Forbidden code point U+0081.",
+                         "extract":  "          \u003ch2\u003eÃreas de Intere",
+                         "hiliteStart":  15,
+                         "hiliteLength":  1
+                     },
+                     {
+                         "type":  "error",
+                         "lastLine":  228,
+                         "lastColumn":  23,
+                         "message":  "Forbidden code point U+0081.",
+                         "extract":  "       \u003clabel\u003eÃreas de atuaÃ§",
+                         "hiliteStart":  15,
+                         "hiliteLength":  1
+                     }
+                 ]
+}

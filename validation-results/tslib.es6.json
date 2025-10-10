@@ -1,0 +1,35 @@
+﻿{
+    "messages":  [
+                     {
+                         "type":  "error",
+                         "lastLine":  1,
+                         "lastColumn":  27,
+                         "firstColumn":  1,
+                         "message":  "Start tag seen without seeing a doctype first. Expected “\u003c!DOCTYPE html\u003e”.",
+                         "extract":  "\u003cscript src=\"tslib.es6.js\"\u003e\u003c/scri",
+                         "hiliteStart":  0,
+                         "hiliteLength":  27
+                     },
+                     {
+                         "type":  "error",
+                         "lastLine":  1,
+                         "lastColumn":  36,
+                         "firstColumn":  28,
+                         "message":  "Element “head” is missing a required instance of child element “title”.",
+                         "extract":  "b.es6.js\"\u003e\u003c/script\u003e",
+                         "hiliteStart":  10,
+                         "hiliteLength":  9
+                     },
+                     {
+                         "type":  "info",
+                         "lastLine":  1,
+                         "lastColumn":  27,
+                         "firstColumn":  1,
+                         "subType":  "warning",
+                         "message":  "Consider adding a “lang” attribute to the “html” start tag to declare the language of this document.",
+                         "extract":  "\u003cscript src=\"tslib.es6.js\"\u003e\u003c/scri",
+                         "hiliteStart":  0,
+                         "hiliteLength":  27
+                     }
+                 ]
+}
