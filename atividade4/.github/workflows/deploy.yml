@@ -10,7 +10,7 @@ on:
 
 env:
   NODE_VERSION: '18.x'
-  SITE_URL: ${{ secrets.SITE_URL || 'https://plataforma-ong.github.io' }}
+  SITE_URL: 'https://plataforma-ong.github.io'
 
 jobs:
   # ✅ TESTES E VALIDAÇÃO
@@ -250,7 +250,7 @@ jobs:
         - **Status:** ✅ Sucesso
         
         ## 📈 Métricas
-        - **Build Time:** ${{ github.run_duration || 'N/A' }}
+        - **Build Time:** N/A
         - **Tests:** ✅ Passed
         - **Accessibility:** ✅ WCAG 2.1 AA
         - **Performance:** ✅ Lighthouse > 90

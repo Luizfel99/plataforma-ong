@@ -639,12 +639,37 @@ class SPAApplication {
     }
 }
 
-// Inicializar aplicação quando script carregar
-const app = new SPAApplication();
+/**
+ * CLASSE PRINCIPAL DA APLICAÇÃO SPA
+ */
+class SPAApplication {
+    constructor() {
+        // Estado inicial da aplicação
+        this.state = {
+            currentRoute: '/',
+            isLoading: false,
+            isOnline: navigator.onLine,
+            user: null,
+            lastSaved: null,
+            theme: 'light',
+            isAuthenticated: false,
+            pendingForms: [],
+            searchQuery: '',
+            filters: {},
+            viewport: this.getViewportSize(),
+            performance: {
+                loadTime: Date.now(),
+                interactions: 0,
+                errors: 0
+            }
+        };
 
-// Exportar para uso global
-window.app = app;
-export default app;
+        // Serviços da aplicação
+        this.services = {
+            router: null,
+            domManager: null,
+            formManager: null,
+            stateManager: null,
             navigation: null,
             notifications: null,
             dataService: null,
