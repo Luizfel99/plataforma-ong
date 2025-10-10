@@ -9,81 +9,59 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header class="navbar">
-    <div class="container navbar__inner">
-      <a class="navbar__brand" href="index.html">Plataforma ONG</a>
-      <input type="checkbox" id="nav-toggle" aria-label="Abrir menu">
-      <label for="nav-toggle" class="navbar__hamburger">☰</label>
-      <nav class="navbar__menu" aria-label="Principal">
+  <header>
+    <div class="container">
+      <h1>🤝 Plataforma ONG</h1>
+      <nav>
         <ul>
-          <li class="navbar__item"><a class="navbar__link" href="index.html">Início</a></li>
-          <li class="navbar__item"><a class="navbar__link" href="projetos.html">Projetos</a></li>
-          <li class="navbar__item"><a class="navbar__link" href="doacoes.html">Doar</a></li>
-          <li class="navbar__item"><a class="navbar__link" href="voluntariado.html">Voluntariado</a></li>
-          <li class="navbar__item"><a class="navbar__link" href="cadastro.html">Cadastro</a></li>
-          <li class="navbar__item"><a class="navbar__link" href="contato.html">Contato</a></li>
+          <li><a href="index.html" class="active">Início</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="projetos.html">Projetos</a></li>
+          <li><a href="doacoes.html">Doar</a></li>
+          <li><a href="voluntariado.html">Voluntariado</a></li>
+          <li><a href="contato.html">Contato</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
   <main>
-    <section class="hero container">
-      <h1>Conectando doadores a causas reais</h1>
-      <p class="muted">Transparência, impacto e confiança para fortalecer ONGs.</p>
-      <div class="mt-2">
-  <a class="btn btn--primary" href="projetos.html">Conheça projetos</a>
-  <a class="btn btn--ghost" href="sobre.html">Como funciona</a>
+    <section class="hero">
+      <h2>Conectando doadores a causas reais</h2>
+      <p>Transparência, impacto e confiança para fortalecer ONGs e transformar vidas através de projetos sociais verificados.</p>
+      <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+        <a href="projetos.html" style="background: var(--primary-blue); color: white; padding: 0.75rem 1.5rem; text-decoration: none; border-radius: 0.5rem; font-weight: 600;">Conheça Projetos</a>
+        <a href="sobre.html" style="background: var(--gray-100); color: var(--gray-800); padding: 0.75rem 1.5rem; text-decoration: none; border-radius: 0.5rem; font-weight: 600;">Como Funciona</a>
       </div>
     </section>
 
-    <section class="container">
-      <h2 class="text-center mb-4">Projetos em destaque</h2>
-      <div class="grid grid--cards">
-        <article class="card">
-          <div class="card__media">
-            <img src="assets/img/img1.svg" alt="Mutirão de saúde">
-          </div>
-          <div class="card__body">
-            <h3 class="card__title">Mutirão de Saúde Comunitária</h3>
-            <p class="card__meta">Saúde • Recife, PE</p>
-            <p class="card__description">Atendimento médico gratuito para comunidades carentes, incluindo consultas, exames e medicamentos básicos.</p>
-            <div class="d-flex" style="gap: var(--space-2); align-items: center;">
-              <span class="badge badge--success">Saúde</span>
+    <section>
+      <h2>Projetos em Destaque</h2>
+      <div class="grid">
+        <div class="card">
+          <img src="assets/img/img1.svg" alt="Mutirão de saúde" class="small-image">
+          <h3>Mutirão de Saúde Comunitária</h3>
+          <p>Atendimento médico gratuito para comunidades carentes, incluindo consultas, exames e medicamentos básicos.</p>
+          <a href="doacoes.html" style="background: var(--success-green); color: white; padding: 0.5rem 1rem; text-decoration: none; border-radius: 0.375rem; font-weight: 500; display: inline-block;">Doar Agora</a>
+        </div>
               <a class="btn btn--primary" href="doacoes.html">Doar Agora</a>
             </div>
           </div>
-        </article>
+        <div class="card">
+          <img src="assets/img/img2.svg" alt="Educação infantil" class="small-image">
+          <h3>Educação para Todos</h3>
+          <p>Programa de alfabetização e reforço escolar para crianças em vulnerabilidade social.</p>
+          <a href="doacoes.html" style="background: var(--info-cyan); color: white; padding: 0.5rem 1rem; text-decoration: none; border-radius: 0.375rem; font-weight: 500; display: inline-block;">Doar Agora</a>
+        </div>
 
-        <article class="card">
-          <div class="card__media">
-            <img src="assets/img/img2.svg" alt="Educação infantil">
-          </div>
-          <div class="card__body">
-            <h3 class="card__title">Educação para Todos</h3>
-            <p class="card__meta">Educação • São Paulo, SP</p>
-            <p class="card__description">Programa de alfabetização e reforço escolar para crianças em vulnerabilidade social.</p>
-            <div class="d-flex" style="gap: var(--space-2); align-items: center;">
-              <span class="badge badge--info">Educação</span>
-              <a class="btn btn--primary" href="doacoes.html">Doar Agora</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="card">
-          <div class="card__media">
-            <img src="assets/img/img3.svg" alt="Meio ambiente">
-          </div>
-          <div class="card__body">
-            <h3 class="card__title">Preserve o Verde</h3>
-            <p class="card__meta">Meio Ambiente • Rio de Janeiro, RJ</p>
-            <p class="card__description">Reflorestamento de áreas degradadas e educação ambiental em escolas públicas.</p>
-            <div class="d-flex" style="gap: var(--space-2); align-items: center;">
-              <span class="badge badge--success">Ambiental</span>
-              <a class="btn btn--primary" href="doacoes.html">Doar Agora</a>
-            </div>
-          </div>
-        </article>
+        <div class="card">
+          <img src="assets/img/img3.svg" alt="Meio ambiente" class="small-image">
+          <h3>Preserve o Verde</h3>
+          <p>Reflorestamento de áreas degradadas e educação ambiental em escolas públicas.</p>
+          <a href="doacoes.html" style="background: var(--success-green); color: white; padding: 0.5rem 1rem; text-decoration: none; border-radius: 0.375rem; font-weight: 500; display: inline-block;">Doar Agora</a>
+        </div>
+      </div>
+    </section>
       </div>
     </section>
 
